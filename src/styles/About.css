@@ -1,16 +1,16 @@
-.container {
+.about-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  h1 {
+  .about-container h1 {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 32px;
   }
   
-  p {
-    color: #b9973b;
+  .about-container p {
+    color: #CCA464;
     font-size: 16px;
   }
   

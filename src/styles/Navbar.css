@@ -1,28 +1,32 @@
-nav {
-    background-color: #3f3f3f;
+.divNavbar {
+    background-color: #CCA464;
     padding: 10px;
+    position: fixed;
+    width: 100%; /* Fix the navbar's position */
+    top: 0; /* Position it at the top */
+    left: 0;
   }
   
-  ul {
+  .divNavbar ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     justify-content: center;
   }
   
-  li {
+  .divNavbar li {
     margin-right: 10px;
     
   }
   
-  a {
+  .divNavbar a {
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
   }
   
-  a:hover {
-    background-color: #6c6a6a;
-    color: #fff;
+  .divNavbar a:hover {
+    background-color: #3f3f3f;
+    color: #CCA464;
   }
   

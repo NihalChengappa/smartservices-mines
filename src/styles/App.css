@@ -12,7 +12,7 @@
   transition: filter 300ms;
 } */
 .sslogoapp:hover {
-  filter: drop-shadow(0 0 2em rgb(177, 171, 171));
+  filter: drop-shadow(0 0 2em #CCA464);
 }
 
 .card {

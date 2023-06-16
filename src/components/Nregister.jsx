@@ -1,7 +1,12 @@
+
+
+
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from './api/axios';
+import { Link } from 'react-router-dom';
+// import axios from './api/axios';
+import '/src/styles/Register.css'
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -57,7 +62,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <div className="register-container">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -68,7 +73,7 @@ const Register = () => {
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <h2>Register</h2>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
@@ -143,16 +148,17 @@ const Register = () => {
 
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
-                    <p>
-                        Already registered?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="#">Sign In</a>
-                        </span>
+
+                    <p className="p1l">
+                        Already have an account?&nbsp;&nbsp;&nbsp;
+                        <Link to="/login">Login</Link>
+                    </p>
+                    <p id="p2r">
+                        <Link to="/">Back to Home</Link>
                     </p>
                 </section>
             )}
-        </>
+        </div>
     )
 }
 

@@ -10,7 +10,7 @@
     height: 40px;
     border-radius: 50%;
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #dbbf34;
+    border-top: 4px solid #CCA464;
     animation: spin 2s linear infinite;
     margin-bottom: 16px;
   }

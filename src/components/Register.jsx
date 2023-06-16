@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
 // import axios from './api/axios';
 import '/src/styles/Register.css'
 
@@ -58,7 +59,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="register-container">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -144,6 +145,14 @@ const Register = () => {
 
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
+
+                    <p className="p1l">
+                        Already have an account?&nbsp;&nbsp;&nbsp;
+                        <Link to="/login">Login</Link>
+                    </p>
+                    <p id="p2r">
+                        <Link to="/">Back to Home</Link>
+                    </p>
                 </section>
             )}
         </div>
