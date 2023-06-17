@@ -14,14 +14,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
+/* a {
   font-weight: 500;
-  color: #3f3f3f;
+  color: #3f3f3f; 
+   somehow controls signup page a colour 
   text-decoration: inherit;
 }
 a:hover {
   color: #CCA464;
-}
+} */
 
 body {
   margin: 0;
@@ -43,12 +44,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #333;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ffffff;
 }
 button:focus,
 button:focus-visible {
