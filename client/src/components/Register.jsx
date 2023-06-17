@@ -5,7 +5,7 @@ import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '/src/styles/Register.css'
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+const USER_REGEX = /^[A-z][A-z0-9-_@.]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
@@ -57,11 +57,10 @@ const Register = () => {
         console.log(user,pwd);
         setSuccess(true);
         try{
-            data={email:user,password:pwd}
             const url="http://localhost:8080/api/users"
-            const response = await axios.post(url, data);
+            const response = await axios.post(url,{user, pwd} );
                 navigate("/login");
-                console.log(res.message);
+                console.log(response.data);
         }
         catch (err) {
             if (!err?.response) {
@@ -81,7 +80,7 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="\login">Sign In</a>
                     </p>
                 </section>
             ) : (
@@ -90,7 +89,7 @@ const Register = () => {
                     <h2>Register</h2>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
-                            Username:
+                            Email:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>

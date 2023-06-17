@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import axios from "axios"
 import { Link } from 'react-router-dom';
 import '/src/styles/Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setEmail] = useState('');
+  const [pwd, setPassword] = useState('');
+  const [error, setError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -18,13 +20,27 @@ const Login = () => {
     window.location.href = '/register';
   };
 
-  const handleLogin = () => {
-    // Handle login logic here
+  const handleLogin =  async(e) => {
+    try {
+      const url="http://localhost:8080/api/auth"
+      const response=await axios.post(url,{user,pwd})
+      console.log(response.data)
+      window.location.href = '/home';
+    } catch (error) {
+      if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.message);
+			}
+      
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      handleLogin();   
+      handleLogin(e);   
   };
 
   return (
@@ -33,11 +49,11 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input type="email" value={user} onChange={handleEmailChange} />
         </div>
         <div className="form-group">
           <label>Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="password" value={password} onChange={handlePasswordChange} />
+          <input type="password" value={pwd} onChange={handlePasswordChange} />
         </div>
         <button type="submit">Login</button>
       </form>

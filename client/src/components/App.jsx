@@ -8,7 +8,6 @@ import LogoLoad from '/src/components/LogoLoad';
 import Login from '/src/components/Login';
 import Register from '/src/components/Register';
 import sslogoapp from '/src/assets/sslogo.png';
-
 import '/src/styles/App.css'
 
 const App = () => {
