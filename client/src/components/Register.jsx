@@ -55,14 +55,15 @@ const Register = () => {
             return;
         }
         console.log(user,pwd);
-        setSuccess(true);
         try{
             const url="http://localhost:8080/api/users"
             const response = await axios.post(url,{user, pwd} );
-                navigate("/login");
-                console.log(response.data);
+                // navigate("/login");
+            // console.log(response.data);
+            setSuccess(true);
         }
         catch (err) {
+            // console.log(err)
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 409) {
@@ -78,8 +79,8 @@ const Register = () => {
         <div className="register-container">
             {success ? (
                 <section>
-                    <h1>Success!</h1>
-                    <p>
+                    <h1>Successfully Registered!</h1>
+                    <p><br/>
                         <a href="\login">Sign In</a>
                     </p>
                 </section>
@@ -109,8 +110,8 @@ const Register = () => {
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
+                            Must have valid email format:user@mail.com.<br />
+                            Letters, numbers, underscores, hyphens,@ allowed.
                         </p>
 
 
