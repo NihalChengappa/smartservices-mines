@@ -80,9 +80,16 @@ const Register = () => {
             {success ? (
                 <section>
                     <h1>Successfully Registered!</h1>
-                    <p><br/>
-                        <a href="\login">Sign In</a>
-                    </p>
+                    <div>
+                        <p>
+                            &nbsp;
+                        </p>
+                    </div>
+                    <div className="loginAS">
+                        <button type="button">
+                            <Link to="/login">Login</Link>
+                        </button>
+                    </div>
                 </section>
             ) : (
                 <section>
@@ -163,13 +170,18 @@ const Register = () => {
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
 
-                    <p className="p1l">
-                        Already have an account?&nbsp;&nbsp;&nbsp;
-                        <Link to="/login">Login</Link>
-                    </p>
-                    <p id="p2r">
+                    <div className="p1r">
+                        Already have an account?
+                        <p>
+                            
+                        </p>
+                        <button type="button">
+                            <Link to="/login">Login</Link>
+                         </button>
+                    </div>
+                    <div className="p2r">
                         <Link to="/">Back to Home</Link>
-                    </p>
+                    </div>
                 </section>
             )}
         </div>
