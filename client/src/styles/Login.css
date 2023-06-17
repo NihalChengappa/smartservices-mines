@@ -1,5 +1,6 @@
 .login-container {
   max-width: 400px;
+  position: center;
   margin: 0 auto;
   padding: 40px;
   border: 1px solid #ccc;
@@ -57,4 +58,30 @@
 .login-container a:hover {
   /* background-color: #3f3f3f; */
   color: #ffc260;
+}
+
+.pb{
+  color: #fff
+}
+
+.pb a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.pb a:hover{
+  color: #fff
+}
+
+.bthl{
+  color: #000000
+}
+
+.bthl a{
+  color: #000000;
+  text-decoration: none;
+}
+
+.bthl a:hover{
+  color: #fff
 }

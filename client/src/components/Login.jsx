@@ -16,10 +16,6 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleButtonClick = () => {
-    window.location.href = '/register';
-  };
-
   const handleLogin =  async(e) => {
     try {
       const url="http://localhost:8080/api/auth"
@@ -61,13 +57,15 @@ const Login = () => {
         Don't have an account?
           <p>
           </p>
-        <button type="button" onClick={handleButtonClick}>
-          Sign Up
-        </button>
       </p>
-      <p className='p2l'>
+          <div className='pb' >
+            <button type="button">
+              <Link to="/register">Signup</Link>
+            </button>
+          </div>
+      <div className='bthl'>
         <Link to="/">Back to Home</Link>
-      </p>
+      </div>
     </div>
   );
 };
