@@ -7,7 +7,6 @@ import '/src/styles/Register.css'
 
 const USER_REGEX = /^[A-z][A-z0-9-_@.]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/register';
 
 const Register = () => {
     const userRef = useRef();
@@ -54,7 +53,7 @@ const Register = () => {
             setErrMsg("Invalid Entry");
             return;
         }
-        console.log(user,pwd);
+        // console.log(user,pwd);
         try{
             const url="http://localhost:8080/api/users"
             const response = await axios.post(url,{user, pwd} );
