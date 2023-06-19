@@ -1,7 +1,7 @@
 .divNavbar {
   background-color: #CCA464;
   padding: 10px;
-  position: fixed;
+  position: absolute;
   width: 100%; /* Fix the navbar's position */
   top: 0; /* Position it at the top */
   left: 0;
