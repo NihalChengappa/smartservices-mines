@@ -1,8 +1,7 @@
-import React, { useState,useRef } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import Sidebar from './Sidebar';
 import axios from "axios"
 import { Link } from 'react-router-dom';
-import { ProSidebarProvider } from "react-pro-sidebar";
 import '/src/styles/Login.css';
 
 const Login = () => {
@@ -19,11 +18,35 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const expirationTime = localStorage.getItem('expirationTime');
+  
+    if (token && expirationTime) {
+      const currentTime = Date.now();
+      // const expirationTimestamp = parseInt(expirationTime);
+      console.log(currentTime,expirationTime)
+      if (currentTime < expirationTime) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+        // Token has expired, clear localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('expirationTime');
+      }
+    } else {
+      setLogin(false);
+    }
+  }, []);
+  
+
   const handleLogin =  async(e) => {
     try {
       const url="http://localhost:8080/api/auth"
       const response=await axios.post(url,{user,pwd})
       setLogin(true)
+      localStorage.setItem("token", response.data.data);
+      localStorage.setItem("expirationTime", response.data.timeleft);
       console.log(response.data)
     } catch (error) {
       if (
@@ -68,8 +91,6 @@ const Login = () => {
         </form>
         <p className='p1l'>
           Don't have an account?
-            <p>
-            </p>
         </p>
             <div className='pb' >
               <button type="button">
