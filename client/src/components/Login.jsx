@@ -1,6 +1,8 @@
 import React, { useState,useRef } from 'react';
+import Sidebar from './Sidebar';
 import axios from "axios"
 import { Link } from 'react-router-dom';
+import { ProSidebarProvider } from "react-pro-sidebar";
 import '/src/styles/Login.css';
 
 const Login = () => {
@@ -46,7 +48,7 @@ const Login = () => {
     <div className="login-container">
       {successlogin ? (
       <section>
-        <h1>Success</h1>
+        <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
       </section>
       )
       :
