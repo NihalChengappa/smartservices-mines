@@ -8,6 +8,7 @@ import Login from '/src/components/Login';
 import Register from '/src/components/Register';
 import Checkposts from '/src/components/Checkposts';
 import TransportDetails from '/src/components/TransportDetails';
+import Eligibility from '/src/components/Eligibility';
 import sslogoapp from '/src/assets/sslogo.png';
 
 import '/src/styles/App.css'
@@ -41,6 +42,7 @@ const App = () => {
               <>
               <Route path="/checkposts" element={<Checkposts />} />
               <Route path="/transportdetails" element={<TransportDetails />} />
+              <Route path="/eligibility" element={<Eligibility />} />
               </>
             ) : (<Route
               path="/checkposts"
