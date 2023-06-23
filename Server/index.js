@@ -8,8 +8,11 @@ const authRoutes = require("./routes/auth");
 const checkposts = require("./routes/checkposts");
 const transportdetails = require("./routes/transportdetails");
 const eligibility = require("./routes/eligibility");
+const quarry = require("./routes/quarry")
+
 // database connection
 connection();
+
 // middlewares
 app.use(cors());
 app.use(express.json());
@@ -19,7 +22,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/checkposts", checkposts);
 app.use("/api/transportdetails", transportdetails);
-app.use("/api/eligibility", eligibility)
+app.use("/api/eligibility", eligibility);
+app.use("/api/quarry", quarry)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

@@ -14,6 +14,9 @@ const Sidebar = () => {
       <li>
         <Link to ="/eligibility">Eligibility</Link>
       </li>
+      <li>
+        <Link to ="/quarry">Quarry</Link>
+      </li>
         <li>About</li>
         <li>Contact</li>
       </ul>
