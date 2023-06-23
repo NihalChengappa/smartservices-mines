@@ -7,7 +7,10 @@ const Sidebar = () => {
       <ul className="sidebar-list">
       <li>
           <Link to ="/checkposts">Checkposts</Link>
-        </li>
+      </li>
+      <li>
+        <Link to ="/transportdetails">Transport Details</Link>
+      </li>
         <li>About</li>
         <li>Contact</li>
       </ul>
