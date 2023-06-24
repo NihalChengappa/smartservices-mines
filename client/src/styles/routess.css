@@ -1,0 +1,57 @@
+.selected-checkposts {
+    margin-top: -300px; /* Adjust the margin as needed */
+    margin-left: 1000px;
+  }
+.select-container {
+position: fixed;
+top: 50%;
+left: 51%; /* Move the select to the center horizontally */
+transform: translateX(-50%); /* Move the select to the right */
+/* min-width: 200px; Adjust the width as needed */
+max-width: 400px
+}
+
+.custom-select .css-yk16xz-control {
+height: 40px; /* Adjust the height as needed */
+}
+
+.custom-select .css-1pahdxg-control {
+border-radius: 5px; /* Add border radius if needed */
+}
+
+.custom-select .css-26l3qy-menu {
+width: 200px; /* Adjust the width as needed */
+position: absolute;
+top: 100%;
+left: 0;
+}
+
+.custom-select .css-11unzgr-menu {
+max-height: 200px; /* Adjust the max height of the menu as needed */
+overflow-y: auto;
+}
+.create-route-button {
+    margin-top: 5px; /* Adjust the top margin as needed */
+    text-align: center; /* Align the button to the center */
+    margin-left: 400px;
+    position: fixed;
+  }
+/* .route-label{
+    position: fixed;
+    margin-top: 0%;
+} */
+.route-title {
+    text-align: center; /* Align the title in the center */
+    margin-top: -70px; /* Adjust the top margin as needed */
+  }
+.checkposts-mapped{
+    margin-top: 10px;
+    margin-left: -70px;
+    position: fixed;
+}
+  
+  
+/* .create-route-button button { */
+/* Apply additional styles to the button if needed */
+/* } */
+  

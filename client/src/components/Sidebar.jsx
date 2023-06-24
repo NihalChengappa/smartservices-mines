@@ -9,6 +9,9 @@ const Sidebar = () => {
           <Link to ="/checkposts">Checkposts</Link>
       </li>
       <li>
+        <Link to ="/routes">Routes</Link>
+      </li>
+      <li>
         <Link to ="/transportdetails">Transport Details</Link>
       </li>
       <li>

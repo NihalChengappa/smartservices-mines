@@ -11,6 +11,7 @@ import TransportDetails from '/src/components/TransportDetails';
 import Eligibility from '/src/components/Eligibility';
 import Quarry from '/src/components/Quarry';
 import sslogoapp from '/src/assets/sslogo.png';
+import Routess from './Routess';
 
 import '/src/styles/App.css'
 
@@ -45,6 +46,7 @@ const App = () => {
               <Route path="/transportdetails" element={<TransportDetails />} />
               <Route path="/eligibility" element={<Eligibility />} />
               <Route path="/quarry" element={<Quarry />} />
+              <Route path="/routes" element={<Routess />} />
               </>
             ) : (<Route
               path="/checkposts"
