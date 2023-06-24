@@ -11,6 +11,8 @@ const eligibility = require("./routes/eligibility");
 const quarry = require("./routes/quarry")
 const routess=require("./routes/routess_route")
 const routesss=require("./routes/routess")
+const getroutes=require("./routes/get_route")
+const employee=require("./routes/employee")
 
 // database connection
 connection();
@@ -25,9 +27,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/checkposts", checkposts);
 app.use("/api/transportdetails", transportdetails);
 app.use("/api/eligibility", eligibility);
-app.use("/api/quarry", quarry)
-app.use("/api/checkposts",routess)
-app.use("/api/routes",routesss)
+app.use("/api/quarry", quarry);
+app.use("/api/checkposts",routess);
+app.use("/api/routes",routesss);
+app.use("/api/routes",getroutes);
+app.use("/api/employee",employee);
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

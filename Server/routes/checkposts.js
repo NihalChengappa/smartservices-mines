@@ -1,7 +1,6 @@
 const express=require('express');
 const router=express.Router();
 const Checkpost = require('../models/Checkpost');
-const { route } = require('./auth');
 
 router.post('/',async(req,res) =>{
     const { checkpostID, name, town, division } = req.body;

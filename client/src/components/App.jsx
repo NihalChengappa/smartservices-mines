@@ -12,7 +12,7 @@ import Eligibility from '/src/components/Eligibility';
 import Quarry from '/src/components/Quarry';
 import sslogoapp from '/src/assets/sslogo.png';
 import Routess from './Routess';
-
+import Employee from './Employee';
 import '/src/styles/App.css'
 
 const App = () => {
@@ -43,6 +43,7 @@ const App = () => {
             {isAuthenticated ? (
               <>
               <Route path="/checkposts" element={<Checkposts />} />
+              <Route path="/employee" element={<Employee />} />
               <Route path="/transportdetails" element={<TransportDetails />} />
               <Route path="/eligibility" element={<Eligibility />} />
               <Route path="/quarry" element={<Quarry />} />
