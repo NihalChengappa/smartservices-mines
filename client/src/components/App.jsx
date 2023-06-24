@@ -14,6 +14,8 @@ import sslogoapp from '/src/assets/sslogo.png';
 import Routess from './Routess';
 import Employee from './Employee';
 import '/src/styles/App.css'
+import Teams from './Teams';
+import DutyTracker from './DutyTracker';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -48,6 +50,8 @@ const App = () => {
               <Route path="/eligibility" element={<Eligibility />} />
               <Route path="/quarry" element={<Quarry />} />
               <Route path="/routes" element={<Routess />} />
+              <Route path="/teams" element={<Teams />} />
+              <Route path="/duty" element={<DutyTracker />} />
               </>
             ) : (<Route
               path="/checkposts"

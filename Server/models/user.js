@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.generateAuthToken = function () {
-	const expirationtime=60000+Date.now();
+	const expirationtime=3600000+Date.now();
 	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
 		expiresIn: expirationtime,
 	});

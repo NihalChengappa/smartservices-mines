@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import Sidebar from './Sidebar';
 import axios from 'axios';
 
 const Employee = () => {
@@ -11,7 +12,6 @@ const Employee = () => {
   const [companyName, setCompanyName] = useState('');
   const [checkposts, setCheckposts] = useState([]);
   const [routes, setRoutes] = useState([]);
-  const [data,setData]=useState([]);
 
   const handleEmployeeIdChange = (event) => {
     setEmployeeId(event.target.value);
@@ -43,11 +43,11 @@ const Employee = () => {
 
   useEffect(() => {
     getCheckposts();
-    console.log(checkposts);
+    // console.log(checkposts);
   }, []);
   useEffect(() => {
     getRoutes();
-    console.log(routes);
+    // console.log(routes);
   }, []);
 
   const getCheckposts = async () => {
@@ -77,24 +77,10 @@ const Employee = () => {
       console.error('Error fetching Routes:', error);
     }
   };
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   const handleSubmit = async(event) => {
     event.preventDefault();
     try {
-        // Check if a checkpoint with the same Checkpost ID already exists
         const url="http://localhost:8080/api/employee"
-        // console.log(url,{checkpostID,name,town,division})
-        // console.log(isCheckpostOp);
-        // if(isCheckpostOp===true){
-        //     setRouteName("");
-        //     // console.log(data)
-        // }
-        // if(isMobileSquad===true){
-        //     setData([employeeId,name,phoneNumber,role,routeName,companyName]);
-        // }
-        // console.log(data)
         const response = await axios.post(url,{employeeId,
             name,
             phoneNumber,
@@ -132,6 +118,7 @@ const Employee = () => {
 
   return (
     <div>
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
       <h1>Employee Form</h1>
       <form onSubmit={handleSubmit}>
         <label>

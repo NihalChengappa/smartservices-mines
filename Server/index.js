@@ -13,6 +13,10 @@ const routess=require("./routes/routess_route")
 const routesss=require("./routes/routess")
 const getroutes=require("./routes/get_route")
 const employee=require("./routes/employee")
+const getemployee=require("./routes/get_employee");
+const Teams = require("./routes/teams");
+const getTeams=require("./routes/get_Teams");
+const dutytracker=require("./routes/dutytracker")
 
 // database connection
 connection();
@@ -32,6 +36,10 @@ app.use("/api/checkposts",routess);
 app.use("/api/routes",routesss);
 app.use("/api/routes",getroutes);
 app.use("/api/employee",employee);
+app.use("/api/employee",getemployee);
+app.use("/api/teams",Teams)
+app.use("/api/teams",getTeams)
+app.use("/api/duties",dutytracker)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));
