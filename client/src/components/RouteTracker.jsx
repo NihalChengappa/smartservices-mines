@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Html5QrcodeScanType, Html5QrcodeScanner } from 'html5-qrcode';
 import axios from 'axios';
+import Sidebar from './Sidebar';
 import '/src/styles/RouteTracker.css';
 
 const RouteTracker = () => {
@@ -13,10 +14,13 @@ const RouteTracker = () => {
   const [showSelfieLabel, setShowSelfieLabel] = useState(true);
   const [showPreview, setShowPreview] = useState(false);
   const [teams, setTeams] = useState([]);
-  const [isCameraOpen, setIsCameraOpen] = useState(false); // Added isCameraOpen state
+  const [isCameraOpen, setIsCameraOpen] = useState(false); 
 
   useEffect(() => {
     getTeams();
+    return () => {
+      stopCamera();
+    };
   }, []);
 
   const getTeams = async () => {
@@ -134,10 +138,15 @@ const RouteTracker = () => {
       setTime(new Date().toLocaleTimeString());
       qrCodeScanner.clear();
     }
-    
+    return () => {
+      qrCodeScanner.stop();
+    };
+  
   };
 
   return (
+    <div>
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
     <form onSubmit={handleSubmit} >
       <h1>Route Tracker</h1>
       {showPreview && (
@@ -202,6 +211,7 @@ const RouteTracker = () => {
         </div>
       )}
     </form>
+    </div>
   );
 };
 
