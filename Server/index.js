@@ -18,6 +18,7 @@ const Teams = require("./routes/teams");
 const getTeams=require("./routes/get_Teams");
 const dutytracker=require("./routes/dutytracker")
 const routetracker=require("./routes/routetracker")
+const sccc=require("./routes/sccc")
 
 // database connection
 connection();
@@ -42,6 +43,7 @@ app.use("/api/teams",Teams)
 app.use("/api/teams",getTeams)
 app.use("/api/duties",dutytracker)
 app.use("/api/routetrackers",routetracker)
+app.use("/api/sccc",sccc)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

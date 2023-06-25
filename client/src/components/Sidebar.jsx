@@ -27,6 +27,9 @@ const Sidebar = () => {
         <Link to ="/transportdetails">Transport Details</Link>
       </li>
       <li>
+        <Link to ="/SCCC">SCCC Awardee Details</Link>
+      </li>
+      <li>
         <Link to ="/eligibility">Eligibility</Link>
       </li>
       <li>
