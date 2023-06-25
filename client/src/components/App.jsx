@@ -16,6 +16,7 @@ import Employee from './Employee';
 import '/src/styles/App.css'
 import Teams from './Teams';
 import DutyTracker from './DutyTracker';
+import RouteTracker from './RouteTracker';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -52,6 +53,7 @@ const App = () => {
               <Route path="/routes" element={<Routess />} />
               <Route path="/teams" element={<Teams />} />
               <Route path="/duty" element={<DutyTracker />} />
+              <Route path="/routetracker" element={<RouteTracker />} />
               </>
             ) : (<Route
               path="/checkposts"

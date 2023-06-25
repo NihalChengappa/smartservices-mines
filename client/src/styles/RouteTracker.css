@@ -1,0 +1,67 @@
+  .select-container{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 172px;
+  }
+  .select-container >select{
+    position: relative;
+    width: 173px;
+    height: 23px;
+  }
+  .camera-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  .camera-overlay video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+  }
+  
+  .camera-overlay button {
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .checkpost-container{
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 200px;
+  }
+  .date-container{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -100px;
+  }
+  .time-container{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: -100px;
+  }
+  .submit-button{
+    position: absolute;
+    margin-left: 300px;
+    bottom: 0;
+  }
+  .submit-container {
+    position: relative;
+    margin-top: -110px;
+    z-index: 1;
+  }

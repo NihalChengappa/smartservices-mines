@@ -12,6 +12,9 @@ const Sidebar = () => {
         <Link to ="/employee">Employee</Link>
       </li>
       <li>
+        <Link to ="/routetracker">Route Tracker</Link>
+      </li>
+      <li>
         <Link to ="/routes">Routes</Link>
       </li>
       <li>
