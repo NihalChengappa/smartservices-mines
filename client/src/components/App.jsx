@@ -18,6 +18,7 @@ import Teams from './Teams';
 import DutyTracker from './DutyTracker';
 import RouteTracker from './RouteTracker';
 import SCCC from './SCCC';
+import Lessee from '/src/components/Lessee';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -56,6 +57,7 @@ const App = () => {
               <Route path="/duty" element={<DutyTracker />} />
               <Route path="/routetracker" element={<RouteTracker />} />
               <Route path="/SCCC" element={<SCCC />} />
+              <Route path="/lessee" element={<Lessee />} />
               </>
             ) : (<Route
               path="/checkposts"

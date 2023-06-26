@@ -18,6 +18,9 @@ const Sidebar = () => {
         <Link to ="/routes">Routes</Link>
       </li>
       <li>
+        <Link to ="/lessee">Lessee</Link>
+      </li>
+      <li>
         <Link to ="/teams">Teams</Link>
       </li>
       <li>
