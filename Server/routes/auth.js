@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 		const token=tokenandtime.token
 		const time=tokenandtime.expiration
 		console.log(time)
-		res.status(200).send({ data: token,timeleft:time, message: "logged in successfully" });
+		res.status(200).send({ data: token,timeleft:time,email:req.body.user, message: "logged in successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}

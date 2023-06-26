@@ -16,6 +16,7 @@ const Routess = () => {
   const fetchCheckposts = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/checkposts');
+      // console.log(response.data[-1])
       const options = response.data.map((checkpost) => ({
         value: checkpost,
         label: checkpost,

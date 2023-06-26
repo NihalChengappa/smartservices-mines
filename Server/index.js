@@ -20,6 +20,14 @@ const dutytracker=require("./routes/dutytracker")
 const routetracker=require("./routes/routetracker")
 const sccc=require("./routes/sccc")
 const lessee=require("./routes/lessee")
+const permitmaster=require("./routes/permitmaster")
+const getPermits=require("./routes/get_permitmaster")
+const getSCCC=require("./routes/get_SCCC");
+const getLessee=require("./routes/get_Lessees")
+const getQuarry=require("./routes/get_Quarry")
+const getDrivers=require("./routes/get_driver")
+const getEligibilities=require("./routes/get_Eligibilities")
+const putELigibilities=require("./routes/put_Eligibility")
 
 // database connection
 connection();
@@ -46,6 +54,14 @@ app.use("/api/duties",dutytracker)
 app.use("/api/routetrackers",routetracker)
 app.use("/api/sccc",sccc)
 app.use("/api/lessee",lessee)
+app.use("/api/permitmaster",permitmaster)
+app.use("/api/permitmaster",getPermits)
+app.use("/api/sccc",getSCCC)
+app.use("/api/lessee",getLessee)
+app.use("/api/quarry",getQuarry)
+app.use("/api/transportdetails",getDrivers)
+app.use("/api/eligibility",getEligibilities)
+app.use("/api/eligibility",putELigibilities)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

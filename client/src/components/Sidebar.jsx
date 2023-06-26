@@ -33,6 +33,9 @@ const Sidebar = () => {
         <Link to ="/SCCC">SCCC Awardee Details</Link>
       </li>
       <li>
+        <Link to ="/permitmaster">Permit Master</Link>
+      </li>
+      <li>
         <Link to ="/eligibility">Eligibility</Link>
       </li>
       <li>

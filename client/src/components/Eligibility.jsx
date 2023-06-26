@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
 
 const Eligibility = () => {
   const [lesseeID, setLesseeID] = useState('');
   const [details, setDetails] = useState([{ mineralName: '', weight: '' }]);
+  const [lesseeids,setLesseeids]=useState([]);
 
   const handleDetailChange = (index, field, value) => {
     const updatedDetails = [...details];
@@ -21,6 +22,27 @@ const Eligibility = () => {
     updatedDetails.splice(index, 1);
     setDetails(updatedDetails);
   };
+  const handleLesseeChange=(event)=>{
+    setLesseeID(event.target.value);
+  }
+  
+  useEffect(() => {
+    getLessee();
+    // console.log(routes);
+  }, []);
+  const getLessee=async()=>{
+    try {
+      const response = await axios.get('http://localhost:8080/api/lessee');
+      const lesseeids = response.data.map((lessee) => lessee.LesseeID);
+      const options = lesseeids.map((lessee) => ({
+        value: lessee,
+        label: lessee,
+      }));
+      setLesseeids(options);
+    } catch (error) {
+      console.error('Error fetching LesseeIDs:', error);
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,12 +68,14 @@ const Eligibility = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="lesseeID">Lessee ID:</label>
-          <input
-            type="text"
-            id="lesseeID"
-            value={lesseeID}
-            onChange={(e) => setLesseeID(e.target.value)}
-          />
+          <select value={lesseeID} onChange={handleLesseeChange}>
+            <option value={""}>Select ID</option>
+            {lesseeids.map((options)=>(
+                <option key={options.value} value={options.value}>
+                    {options.label}
+                </option>
+            ))}
+          </select>
         </div>
         {details.map((detail, index) => (
           <div key={index}>

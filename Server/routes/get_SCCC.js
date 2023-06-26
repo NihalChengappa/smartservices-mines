@@ -2,18 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 // Import the Checkpost model or any other necessary dependencies
-const Employee = require('../models/Employee');
+const SCCC = require('../models/SCCC');
 
 // Route to fetch all routes
 router.get('/', async (req, res) => {
     try {
-      const employees = await Employee.find();
-      console.log(employees)
-      // const employeeNames = employees.map((employee) => employee.name);
-      res.json(employees);
+      const sccc = await SCCC.find();
+      res.json(sccc);
     //   console.log(res)
     } catch (error) {
-      console.error('Error fetching Employee names:', error);
+      console.error('Error fetching SCCC details:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   });

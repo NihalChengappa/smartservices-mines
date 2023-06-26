@@ -24,7 +24,8 @@ const Teams = () => {
   const getMembers = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/employee');
-      const options = response.data.map((employee) => ({
+      const employeeNames = response.data.filter((employee) => employee.role === "Mobile Squad").map((employee) => employee.name);
+      const options = employeeNames.map((employee) => ({
         value: employee,
         label: employee,
       }));

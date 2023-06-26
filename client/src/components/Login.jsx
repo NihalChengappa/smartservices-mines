@@ -48,6 +48,7 @@ const Login = ({ setIsAuthenticated }) => {
       setLogin(true);
       setIsAuthenticated(true); // Set the authentication status in the App component
       localStorage.setItem('token', response.data.data);
+      localStorage.setItem('email',response.data.email);
       localStorage.setItem('expirationTime', response.data.timeleft);
     } catch (error) {
       if (

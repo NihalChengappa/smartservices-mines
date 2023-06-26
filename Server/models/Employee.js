@@ -8,6 +8,10 @@ const employeeSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  emailID: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,

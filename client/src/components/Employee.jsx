@@ -11,6 +11,7 @@ const Employee = () => {
   const [routeName, setRouteName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [checkposts, setCheckposts] = useState([]);
+  const [emailID, setEmailID] = useState('');
   const [routes, setRoutes] = useState([]);
 
   const handleEmployeeIdChange = (event) => {
@@ -19,6 +20,9 @@ const Employee = () => {
 
   const handleNameChange = (event) => {
     setName(event.target.value);
+  };
+  const handleEmailChange = (event) => {
+    setEmailID(event.target.value);
   };
 
   const handlePhoneNumberChange = (event) => {
@@ -82,6 +86,7 @@ const Employee = () => {
     try {
         const url="http://localhost:8080/api/employee"
         const response = await axios.post(url,{employeeId,
+          emailID,
             name,
             phoneNumber,
             role,
@@ -109,6 +114,7 @@ const Employee = () => {
     setPhoneNumber('');
     setRole('');
     setCheckpostName('');
+    setEmailID('');
     setRouteName('');
     setCompanyName('');
   };
@@ -127,6 +133,17 @@ const Employee = () => {
             type="text"
             value={employeeId}
             onChange={handleEmployeeIdChange}
+            required
+          />
+        </label>
+        <br />
+        <br />
+        <label>
+          Email ID:
+          <input
+            type="text"
+            value={emailID}
+            onChange={handleEmailChange}
             required
           />
         </label>
