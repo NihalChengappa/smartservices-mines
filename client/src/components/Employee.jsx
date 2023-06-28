@@ -72,7 +72,8 @@ const Employee = () => {
   const getRoutes = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/routes');
-      const options = response.data.map((route) => ({
+      const route=response.data.map((item) => item.routeName)
+      const options = route.map((route) => ({
         value: route,
         label: route,
       }));

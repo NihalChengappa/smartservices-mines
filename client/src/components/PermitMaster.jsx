@@ -48,11 +48,6 @@ const PermitMaster = () => {
   const [dispatchDateTime, setDispatchDateTime] = useState('');
   const [licencenos,setLicencenos]=useState([]);
   const [qrCode, setQrCode] = useState('');
-
-  const handlePrint = () => {
-    // Implement your print functionality here...
-    window.print();
-  };
   const printRef = useRef();
   useEffect(()=>{
     getForm();
