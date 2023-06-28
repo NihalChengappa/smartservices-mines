@@ -99,16 +99,54 @@
     margin-left: 10px;
     display: block !important;
   }
+  .subhead3 table{
+    width: 750px;
+  }
+  .subhead3{
+    position: fixed;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    margin-top: 473px;
+    margin-left: 10px;
+    display: block !important;
+  }
+  .subhead3 tr td {
+    padding-left: 65px;
+    font-style:oblique;
+  }
+  .nos1{
+    margin-top: 1px;
+    margin-left: 130px;
+    font-size: 13px;
+  }
+  .nos2{
+    margin-top: -7px;
+    margin-left: 130px;
+    font-size: 13px;
+  }
+  .nos3{
+    margin-top: -7px;
+    margin-left: 130px;
+    font-size: 13px;
+  }
+  .nos4{
+    margin-top: -7px;
+    margin-left: 130px;
+    font-size: 13px;
+  }
   .mineral-details table {
     width: 750px; 
   }
   .mineral-details{
     position: fixed;
-    text-align: center;
     color: rgb(6, 6, 6);
     margin-top: 290px;
     margin-left: 10px;
     font-size: 13px;
+  }
+  .mineral-details label{
+    text-align: center;
+    display: block;
   }
   .mineral-details table.form-table td select,
 .mineral-details table.form-table td input[type="text"] {
@@ -127,14 +165,21 @@
   }
   .Mine-details{
     position: fixed;
-    text-align: center;
     color: rgb(6, 6, 6);
-    margin-top: 370px;
+    margin-top: 393px;
     margin-left: 10px;
     font-size: 13px;
   }
+  .Mine-details label {
+    text-align: center;
+    display: block;
+  }
   .Mine-details tr td label{
     padding-right: 8px;
+  }
+  .Mine-details tr td select,
+  .Mine-details tr td input{
+    left:20px;
   }
   .Mine-details table.form-table td select,
 .Mine-details table.form-table td input[type="text"] {
@@ -152,9 +197,8 @@
   }
   .consignee{
     position: fixed;
-    text-align: center;
     color: rgb(0, 0, 0);
-    margin-top: 575px;
+    margin-top: 597px;
     margin-left: 10px;
     font-size: 13px;
   }
@@ -165,6 +209,10 @@
     resize: none;
     background-color: transparent;
     overflow: hidden; /* Ensure no scrollbars are shown */
+  }
+  .consignee label{
+    text-align: center;
+    display: block;
   }
   
   /* For Chrome, Safari, and Opera */
@@ -177,11 +225,14 @@
   }
   .Transport-details{
     position: fixed;
-    text-align: center;
     color: rgb(0, 0, 0);
-    margin-top: 655px;
+    margin-top: 678px;
     margin-left: 10px;
     font-size: 13px;
+  }
+  .Transport-details label{
+    text-align: center;
+    display: block;
   }
   .Transport-details input{
     padding-right:30px ;
@@ -209,7 +260,7 @@
   } */
   .qr-code{
     position: fixed;
-    margin-top: 960px;
+    margin-top: 970px;
     margin-left: 340px;
   }
   .hide-in-app {
@@ -228,7 +279,7 @@
   }
   .validity{
     position: fixed;
-    margin-top: 965px;
+    margin-top: 970px;
     margin-left: 65px;
   }
   .sign-driver{
@@ -287,6 +338,9 @@
   display: none;
 }
 .subhead1{
+  display: none;
+}
+.subhead3{
   display: none;
 }
 .subhead2{

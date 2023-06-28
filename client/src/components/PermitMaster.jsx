@@ -277,6 +277,19 @@ const PermitMaster = () => {
     </div>
     <h2 className='subhead2'>MINOR MINERAL TRANSPORTAION DETAILS</h2>
     <h2 className='subhead1'>Seignorage Fee and Consideration Amount Collection Contract(SCCC) Awardee Details</h2>
+    <div className='subhead3'>
+      <table >
+        <tbody>
+          <tr>
+            <td>Location of Quarry Lease:</td>
+          </tr>
+        </tbody>
+      </table>
+      <p className='nos1'>1.</p>
+      <p className='nos2'>2.</p>
+      <p className='nos3'>3.</p>
+      <p className='nos4'>4.</p>
+      </div>
         <h3 className='main-h'>Government Of Andhra Pradesh<br/>
         Department of Mines and Geology<br/>
         Transit Form - Original</h3>
