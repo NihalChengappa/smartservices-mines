@@ -1,0 +1,20 @@
+.report-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .report-label {
+    margin-top: -20px;
+    font-size: 50px;
+  }
+  
+  .report-select {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .report-button {
+    margin-top: 30px;
+  }
+  

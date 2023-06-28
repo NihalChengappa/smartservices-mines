@@ -64,7 +64,7 @@ const Login = ({ setIsAuthenticated }) => {
 
   if (successlogin) {
     return (
-      <Navigate to="/checkposts" /> // Redirect to the checkposts route if successfully logged in
+      <Navigate to="/checkposts" /> 
     );
   }
 

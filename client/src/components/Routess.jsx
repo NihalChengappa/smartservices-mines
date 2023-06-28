@@ -17,7 +17,8 @@ const Routess = () => {
     try {
       const response = await axios.get('http://localhost:8080/api/checkposts');
       // console.log(response.data[-1])
-      const options = response.data.map((checkpost) => ({
+      const checkpostNames = response.data.map((checkpost) => checkpost.name);
+      const options = checkpostNames.map((checkpost) => ({
         value: checkpost,
         label: checkpost,
       }));

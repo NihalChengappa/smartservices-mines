@@ -1,28 +1,307 @@
-.Transit-Form {
-  position: relative;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media print {
+  @page {
+    size: A4; /* Specify the desired page size, e.g., A4, letter, legal, etc. */
+    /* You can also specify custom dimensions using width and height properties */
+    /* size: 8.5in 11in; */
+    /* size: 210mm 297mm; */
+    /* size: landscape; */
+  }
+  .main-h {
+    position: relative;
+    color: rgb(0, 0, 0);
+    margin-top: 0px;
+    margin-left: 250px;
+    display: block !important;
+  }
+  .blue-box {
+    position: fixed;
+    margin: 0px;
+    padding: 20px;
+    background-color: #508cb5;
+    color: #000;
+    height: 60px;
+    width: 800px;
+    z-index: -2;
+  }  
+  .Sccc-awardee:not(#districtCode) {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    margin-top: 400px;
+    margin-left: 50px;
+  }
+  .fno-row {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    margin-top: 53px;
+    margin-left: -260px;
+  }
+  .bno-row {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    margin-top: 13px;
+    margin-left: -260px;
+  }
+  .district-code-row {
+    font-size: 16px;
+    position: fixed;
+    color: rgb(0, 0, 0);
+    margin-top: 55px;
+    margin-left: 500px;
+  }
+  .Transit-Form tr td input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .subhead1 {
+    position: fixed;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    margin-top: 105px;
+    margin-left: 10px;
+  }
+  th, td  {
+    border: 1px solid black;
+    /* padding-left: 8px;
+    padding-right: 8px; */
+  }
+  .Sccc-awardee:not(#districtCode){
+    position: fixed;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    margin-top: 130px;
+    margin-left: 10px;
+  }
+  .Sccc-awardee:not(#districtCode) table {
+    width: 750px; 
+  }
+  
+  .Sccc-awardee tr td input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  .subhead1 {
+    position: fixed;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    margin-top: 205px;
+    margin-left: 10px;
+    display: block !important;
+  }
+  .subhead2{
+    position: fixed;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    margin-top: 355px;
+    margin-left: 10px;
+    display: block !important;
+  }
+  .mineral-details table {
+    width: 750px; 
+  }
+  .mineral-details{
+    position: fixed;
+    text-align: center;
+    color: rgb(6, 6, 6);
+    margin-top: 290px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .mineral-details table.form-table td select,
+.mineral-details table.form-table td input[type="text"] {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.mineral-details table.form-table td select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+  .Mine-details table {
+    width: 750px; /* Adjust the width as needed */
+    /* Add other styles as desired */
+  }
+  .Mine-details{
+    position: fixed;
+    text-align: center;
+    color: rgb(6, 6, 6);
+    margin-top: 370px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .Mine-details tr td label{
+    padding-right: 8px;
+  }
+  .Mine-details table.form-table td select,
+.Mine-details table.form-table td input[type="text"] {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.Mine-details table.form-table td select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+  .consignee table{
+    width: 750px;
+  }
+  .consignee{
+    position: fixed;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 575px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .consignee textarea {
+    padding-left: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+    overflow: hidden; /* Ensure no scrollbars are shown */
+  }
+  
+  /* For Chrome, Safari, and Opera */
+  .consignee textarea::-webkit-resizer {
+    display: none;
+  }  
+  
+  .Transport-details table{
+    width: 750px;
+  }
+  .Transport-details{
+    position: fixed;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 655px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+  .Transport-details input{
+    padding-right:30px ;
+  }
+  .Transport-details table.form-table td select,
+  .Transport-details table.form-table td input[type="text"],
+  .Transport-details table.form-table td input[type="datetime-local"] {
+    border: none;
+  outline: none;
+  background: transparent;
+  }
+  .Transport-details table.form-table td select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .Transport-details table.form-table td input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.Transport-details table.form-table td input[type="datetime-local"]::-webkit-inner-spin-button,
+.Transport-details table.form-table td input[type="datetime-local"]::-webkit-clear-button {
+  display: none;
 }
 
-.Transit-Form label {
-  text-align: center;
-  margin-bottom: 5px;
-}
+  /* .validity{
 
-.Transit-Form .form-row {
-  display: flex;
-  align-items: center;
+  } */
+  .qr-code{
+    position: fixed;
+    margin-top: 960px;
+    margin-left: 340px;
+  }
+  .hide-in-app {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    display: block !important;
+  }
+  .sign-sccc{
+    position: fixed;
+    margin-top: 955px;
+    margin-left: 10px;
+    display: block !important;
+  }
+  .validity{
+    position: fixed;
+    margin-top: 965px;
+    margin-left: 65px;
+  }
+  .sign-driver{
+    position: fixed;
+    margin-top: 975px;
+    margin-left: 610px;
+    display: block !important;
+  }
+  .scc-head{
+    display: none;
+  }
+  .min-head{
+    display: none;
+  }
+  .mine-head{
+    display: none;
+  }
+  .cons-head{
+    display: none;
+  }
+  .trans-head{
+    display: none;
+  }
+  .heading{
+    display: none;
+  }
+  .date-now{
+    display: none;
+  }
+  .watermark {
+    position: fixed;
+    background-image: url('/src/assets/govt.jpeg');
+    margin-top: 430px;
+    margin-left: 205px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 300px;
+    background-size: contain;
+    opacity: 0.2; /* Adjust the opacity as desired */
+    z-index: 9999; /* Ensure the watermark is on top of other elements */
+    display: block !important;
+  }
+  
+  /* Apply the watermark to a specific element or class */
+  
 }
-
-.Transit-Form .form-row label {
-  flex: 0 0 100px;
+.hide-in-app {
+  display:none;
+  /* Add any other styles specific to the print template */
 }
-
-.Transit-Form .form-row input,
-.Transit-Form .form-row select,
-.Transit-Form .form-row textarea {
-  flex: 1;
-  text-align: center;
+.watermark {
+  display:none;
+  /* Add any other styles specific to the print template */
+}
+.main-h {
+  display: none;
+}
+.subhead1{
+  display: none;
+}
+.subhead2{
+  display: none;
+}
+.sign-driver{
+  display: none;
+}
+.sign-sccc{
+  display: none;
+}
+.consignee textarea {
+  resize: both; /* Enables both horizontal and vertical resizing */
+  max-width: 200px; /* Limits the maximum width of the textarea */
+  max-height: 65px; /* Limits the maximum height of the textarea */
+  min-width: 200px; /* Sets a minimum width for the textarea */
+  min-height: 65px; /* Sets a minimum height for the textarea */
 }

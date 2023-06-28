@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
+import govt from '/src/assets/govt.jpeg';
+import ReactToPrint from 'react-to-print';
 import Sidebar from './Sidebar';
 import QRCode from "react-qr-code";
 import axios from 'axios';
@@ -47,13 +49,14 @@ const PermitMaster = () => {
   const [licencenos,setLicencenos]=useState([]);
   const [qrCode, setQrCode] = useState('');
 
+  const handlePrint = () => {
+    // Implement your print functionality here...
+    window.print();
+  };
+  const printRef = useRef();
   useEffect(()=>{
     getForm();
   },[]);
-
-  const generateQRCode = (qrdata) => {
-    <QRCode size={400} bgColor='white' fgColor='black' value={qrdata}></QRCode>
-  };
   const getForm = async (e) => {
     const url = "http://localhost:8080/api/permitmaster";
     const response = await axios.get(url);
@@ -242,141 +245,246 @@ const PermitMaster = () => {
     } catch (error) {
       console.log('Error storing data in MongoDB:', error);
     }
+    getForm();
+    getCompany();
+
+    setLesseeId('');
+    setLesseeNameandAddress('');
+    setLesseeGstNo('');
+
+    setSyNo('');
+    setVillage('');
+    setMandal('');
+    setDistrict('');
+    setLeaseExtent('');
+    setSaleValue('');
+    setMineralName('');
+    setQuantity('');
+    setConsigneeNameandAddress('');
+
+    setDriverLicenceNo('');
+    setDriverName('');
+    setVehicleNo('');
+    setDestination('');
+    setDestinationDistance('');
+    setArrivalDateTime('');
+    setDispatchDateTime('');
   };
 
   return (
-    <div>
+    <div >
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
     <form onSubmit={handleSubmit}>
-    <div className='Transit-Form'>
+    <div ref={printRef} >
+    <div>
+      <img class="hide-in-app" src={govt} alt="Print Image" />
+      <img class="watermark" src={govt} alt="Print Image" />
+    </div>
+    <h2 className='subhead2'>MINOR MINERAL TRANSPORTAION DETAILS</h2>
+    <h2 className='subhead1'>Seignorage Fee and Consideration Amount Collection Contract(SCCC) Awardee Details</h2>
+        <h3 className='main-h'>Government Of Andhra Pradesh<br/>
+        Department of Mines and Geology<br/>
+        Transit Form - Original</h3>
+        <div className="blue-box">
+          {/*  */}
+        </div>
+        <div className='Transit-Form'>
       <h2 className="heading">Transit form</h2>
-      <div className="form-row">
-        <label htmlFor="bookNumber">Book Number</label>
-        <input type="text" id="bookNumber" value={bookNumber} readOnly onChange={(e) => setBookNumber(e.target.value)} />
-      </div>
-
-      <div className="form-row">
-        <label htmlFor="formNumber">Form Number</label>
-        <input type="text" id="formNumber" value={formNumber} readOnly onChange={(e) => setFormNumber(e.target.value)} />
-      </div>
-
-      <div className="form-row">
-        <label htmlFor="currentDate">Date</label>
-        <input type="date" id="currentDate" value={currentDate} onChange={(e)=>setCurrentDate(e.target.value)}/>
-      </div>
-
-      <div className="form-row">
-        <label htmlFor="validUpto">Valid Upto</label>
-        <input type="date" id="validUpto" value={validUpto} onChange={(e) => setValidUpto(e.target.value)} />
-      </div>
+      <table className="form-table" style={{ margin: '0 auto' }}>
+        <tbody>
+          <tr className='bno-row'>
+            <td><label htmlFor="bookNumber">Book Number</label></td>
+            <td><input type="text" id="bookNumber" value={bookNumber} readOnly onChange={(e) => setBookNumber(e.target.value)} /></td>
+          </tr>
+          <tr className='fno-row' >
+            <td><label htmlFor="formNumber">Form Number</label></td>
+            <td><input type="text" id="formNumber" value={formNumber} readOnly onChange={(e) => setFormNumber(e.target.value)} /></td>
+          </tr>
+          <tr className='date-now'>
+            <td><label htmlFor="currentDate">Date</label></td>
+            <td><input type="date" id="currentDate" value={currentDate} onChange={(e) => setCurrentDate(e.target.value)} /></td>
+          </tr>
+          <tr className='validity'>
+            <td><label htmlFor="validUpto">Valid Upto</label></td>
+            <td><input type="date" id="validUpto" value={validUpto} onChange={(e) => setValidUpto(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 className='scc-head' >SCCC Awardee Details</h2>
+    <div className='Sccc-awardee' style={{ display: 'flex', justifyContent: 'center' }}>
+      <table style={{ textAlign: 'center' }}>
+        <tbody>
+          <tr>
+            <td><label htmlFor="contractorName">Contractor Name</label></td>
+            <td><input type="text" id="contractorName" value={contractorName} readOnly onChange={(e) => setContractorName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="agreementNo">Agreement No</label></td>
+            <td><input type="text" id="agreementNo" value={agreementNo} readOnly onChange={(e) => setAgreementNo(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="gstRegistrationNo">GST Registration No</label></td>
+            <td><input type="text" id="gstRegistrationNo" readOnly value={gstRegistrationNo} onChange={(e) => setGstRegistrationNo(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="districtAllotted">District Allotted</label></td>
+            <td><input type="text" id="districtAllotted" readOnly value={districtAllotted} onChange={(e) => setDistrictAllotted(e.target.value)} /></td>
+          </tr>
+          <tr className='district-code-row'>
+            <td className='district-code-label'><label htmlFor="districtCode">District Code</label></td>
+            <td className='district-code-input'><input type="text" id="districtCode" readOnly value={districtCode} onChange={(e) => setDistrictCode(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 className='min-head'>Mineral Transport Details</h2>
+    <div className='mineral-details'>
+      <table className="form-table" style={{ margin: '0 auto' }}>
+        <tbody>
+          <tr>
+            <td><label htmlFor="lesseeId">Lessee ID</label></td>
+            <td>
+              <select value={lesseeId} onChange={handleLesseeChange}>
+                <option value={""}>Select ID</option>
+                {lesseeids.map((options) => (
+                  <option key={options.value} value={options.value}>
+                    {options.label}
+                  </option>
+                ))}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label htmlFor="lesseeName">Lessee Name & Address</label></td>
+            <td><input type="text" id="lesseeName" value={lesseeNameandAddress} onChange={(e) => setLesseeNameandAddress(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="lesseeGstNo">GST No</label></td>
+            <td><input type="text" id="lesseeGstNo" value={lesseeGstNo} onChange={(e) => setLesseeGstNo(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-      <div className='Sccc-awardee'>
-      <h2>SCCC awardee</h2>
-      <label htmlFor="contractorName">Contractor Name</label>
-      <input type="text" id="contractorName" value={contractorName} readOnly onChange={(e) => setContractorName(e.target.value)} />
+    <div className='Mine-details'>
+      <h2 className='mine-head'>Mine Location</h2>
+      <table className="form-table" style={{ margin: '0 auto' }}>
+        <tbody>
+          <tr>
+            <td><label htmlFor="syNo">Sy.No</label></td>
+            <td>
+              <select value={syNo} onChange={handleSyChange}>
+                <option value={""}>Select Sy.No</option>
+                {synos.map((options) => (
+                  <option key={options.value} value={options.value}>
+                    {options.label}
+                  </option>
+                ))}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label htmlFor="village">Village</label></td>
+            <td><input type="text" id="village" value={village} onChange={(e) => setVillage(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="mandal">Mandal</label></td>
+            <td><input type="text" id="mandal" value={mandal} onChange={(e) => setMandal(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="district">District</label></td>
+            <td><input type="text" id="district" value={district} onChange={(e) => setDistrict(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="leaseExtent">Extent of Lease</label></td>
+            <td><input type="text" id="leaseExtent" value={leaseExtent} onChange={(e) => setLeaseExtent(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="mineralName">Mineral Name</label></td>
+            <td><input type="text" id="mineralName" value={mineralName} onBlur={handleMineralChange} onChange={(e) => setMineralName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="quantity">Quantity in Cbm/in MT</label></td>
+            <td><input type="text" id="quantity" value={quantity} onBlur={handleQuantityChange} onChange={(e) => setQuantity(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="saleValue">Sale Value of Mineral</label></td>
+            <td><input type="text" id="saleValue" value={saleValue} onChange={(e) => setSaleValue(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <label htmlFor="agreementNo">Agreement No</label>
-      <input type="text" id="agreementNo" value={agreementNo} readOnly onChange={(e) => setAgreementNo(e.target.value)} />
+    <div className='consignee'>
+      <h2 className='cons-head'>Consignee</h2>
+      <table className="form-table" style={{ margin: '0 auto' }}>
+        <tbody>
+          <tr>
+            <td><label htmlFor="consigneeName">Consignee Name & Address</label></td>
+            <td><textarea id="consigneeName" value={consigneeNameandAddress} onChange={(e) => setConsigneeNameandAddress(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <label htmlFor="gstRegistrationNo">GST Registration No</label>
-      <input type="text" id="gstRegistrationNo" readOnly value={gstRegistrationNo} onChange={(e) => setGstRegistrationNo(e.target.value)} />
+    <div className='Transport-details'>
+      <h2 className='trans-head'>Transport Details</h2>
+      <table className="form-table" style={{ margin: '0 auto' }}>
+        <tbody>
+          <tr>
+            <td><label htmlFor="driverLicenceNo">Driver Licence No</label></td>
+            <td>
+              <select value={driverLicenceNo} onChange={handleDriverChange}>
+                <option value={""}>Select DL</option>
+                {licencenos.map((options) => (
+                  <option key={options.value} value={options.value}>
+                    {options.label}
+                  </option>
+                ))}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label htmlFor="driverName">Driver Name</label></td>
+            <td><input type="text" id="driverName" value={driverName} onChange={(e) => setDriverName(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="vehicleNo">Vehicle No</label></td>
+            <td><input type="text" id="vehicleNo" value={vehicleNo} onChange={(e) => setVehicleNo(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="destination">Destination</label></td>
+            <td><input type="text" id="destination" value={destination} onChange={(e) => setDestination(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="destinationDistance">Distance of Destination (km)</label></td>
+            <td><input type="text" id="destinationDistance" value={destinationDistance} onChange={(e) => setDestinationDistance(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="arrivalDateTime">Arrival Date and Time</label></td>
+            <td><input type="datetime-local" id="arrivalDateTime" value={arrivalDateTime} onChange={(e) => setArrivalDateTime(e.target.value)} /></td>
+          </tr>
+          <tr>
+            <td><label htmlFor="dispatchDateTime">Dispatch Date and Time</label></td>
+            <td><input type="datetime-local" id="dispatchDateTime" value={dispatchDateTime} onChange={(e) => setDispatchDateTime(e.target.value)} /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 className='sign-sccc'>Authorized Signature and Stamp <br/>  of SCC Contractor</h4>
+      <h4 className='sign-driver'>Signature of Driver</h4>
 
-      <label htmlFor="districtAllotted">District Allotted</label>
-      <input type="text" id="districtAllotted" readOnly value={districtAllotted} onChange={(e) => setDistrictAllotted(e.target.value)} />
-
-      <label htmlFor="districtCode">District Code</label>
-      <input type="text" id="districtCode" readOnly value={districtCode} onChange={(e) => setDistrictCode(e.target.value)} />
-      </div>
-      <div className='mineral-details'>
-      <h2>Mineral Transport Details</h2>
-      <label htmlFor="lesseeId">Lessee ID</label>
-      <select value={lesseeId} onChange={handleLesseeChange}>
-        <option value={""}>Select ID</option>
-        {lesseeids.map((options)=>(
-            <option key={options.value} value={options.value}>
-                {options.label}
-            </option>
-        ))}
-      </select>
-
-      <label htmlFor="lesseeName">Lessee Name & Address</label>
-      <input type="text" id="lesseeName" value={lesseeNameandAddress} onChange={(e) => setLesseeNameandAddress(e.target.value)} />
-
-      <label htmlFor="lesseeGstNo">GST No</label>
-      <input type="text" id="lesseeGstNo" value={lesseeGstNo} onChange={(e) => setLesseeGstNo(e.target.value)} />
-      </div>
-      <div className='Mine-details'>
-      <h2>Mine Location</h2>
-      <label htmlFor="syNo">Sy.No</label>
-      <select value={syNo} onChange={handleSyChange}>
-        <option value={""}>Select Sy.No</option>
-        {synos.map((options)=>(
-            <option key={options.value} value={options.value}>
-                {options.label}
-            </option>
-        ))}
-      </select>
-
-      <label htmlFor="village">Village</label>
-      <input type="text" id="village" value={village} onChange={(e) => setVillage(e.target.value)} />
-
-      <label htmlFor="mandal">Mandal</label>
-      <input type="text" id="mandal" value={mandal} onChange={(e) => setMandal(e.target.value)} />
-
-      <label htmlFor="district">District</label>
-      <input type="text" id="district" value={district} onChange={(e) => setDistrict(e.target.value)} />
-
-      <label htmlFor="leaseExtent">Extent of Lease</label>
-      <input type="text" id="leaseExtent" value={leaseExtent} onChange={(e) => setLeaseExtent(e.target.value)} />
-
-      <label htmlFor="saleValue">Sale Value of Mineral</label>
-      <input type="text" id="saleValue" value={saleValue} onChange={(e) => setSaleValue(e.target.value)} />
-
-      <label htmlFor="mineralName">Mineral Name</label>
-      <input type="text" id="mineralName" value={mineralName} onBlur={handleMineralChange} onChange={(e) => setMineralName(e.target.value)} />
-
-      <label htmlFor="quantity">Quantity in Cbm/in MT</label>
-      <input type="text" id="quantity" value={quantity} onBlur={handleQuantityChange} onChange={(e) => setQuantity(e.target.value)} />
-      </div>
-      <div className='consignee'>
-      <h2>Consignee</h2>
-      <label htmlFor="consigneeName">Consignee Name & Address</label>
-      <textarea id="consigneeName" value={consigneeNameandAddress} onChange={(e) => setConsigneeNameandAddress(e.target.value)} />
-      </div>
-      <div className='Transport-details'>
-      <h2>Transport Details</h2>
-      <label htmlFor="driverLicenceNo">Driver Licence No</label>
-      <select value={driverLicenceNo} onChange={handleDriverChange}>
-        <option value={""}>Select DL</option>
-        {licencenos.map((options)=>(
-            <option key={options.value} value={options.value}>
-                {options.label}
-            </option>
-        ))}
-      </select>
-
-      <label htmlFor="driverName">Driver Name</label>
-      <input type="text" id="driverName" value={driverName} onChange={(e) => setDriverName(e.target.value)} />
-
-      <label htmlFor="vehicleNo">Vehicle No</label>
-      <input type="text" id="vehicleNo" value={vehicleNo} onChange={(e) => setVehicleNo(e.target.value)} />
-
-      <label htmlFor="destination">Destination</label>
-      <input type="text" id="destination" value={destination} onChange={(e) => setDestination(e.target.value)} />
-
-      <label htmlFor="destinationDistance">Distance of Destination (km)</label>
-      <input type="text" id="destinationDistance" value={destinationDistance} onChange={(e) => setDestinationDistance(e.target.value)} />
-
-      <label htmlFor="arrivalDateTime">Arrival Date and Time</label>
-      <input type="datetime-local" id="arrivalDateTime" value={arrivalDateTime} onChange={(e) => setArrivalDateTime(e.target.value)} />
-
-      <label htmlFor="dispatchDateTime">Dispatch Date and Time</label>
-      <input type="datetime-local" id="dispatchDateTime" value={dispatchDateTime} onChange={(e) => setDispatchDateTime(e.target.value)} />
-      </div>
       <div className='qr-code'>
       <QRCode size={100} className="qr-code" bgColor='white' fgColor='black' value={qrCode} ></QRCode>
       </div>
+      </div>
+      <div className="form-row">
+          <ReactToPrint
+            trigger={() => <button type="button">Print</button>}
+            content={() => printRef.current} // Ref to the component you want to print
+          />
+        </div>
 
       <button type="submit">Submit</button>
     </form>

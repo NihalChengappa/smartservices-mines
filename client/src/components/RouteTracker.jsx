@@ -26,7 +26,9 @@ const RouteTracker = () => {
   const getTeams = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/teams');
-      const options = response.data.map((team) => ({
+      console.log(response)
+      const team_ids = response.data.map((teamid) => teamid.teamId);
+      const options = team_ids.map((team) => ({
         value: team,
         label: team,
       }));

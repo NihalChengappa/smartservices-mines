@@ -57,7 +57,8 @@ const Employee = () => {
   const getCheckposts = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/checkposts');
-      const options = response.data.map((checkpost) => ({
+      const checkpostNames = response.data.map((checkpost) => checkpost.name);
+      const options = checkpostNames.map((checkpost) => ({
         value: checkpost,
         label: checkpost,
       }));

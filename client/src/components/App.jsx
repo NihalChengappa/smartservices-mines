@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useHistory } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '/src/components/Navbar';
 import Home from '/src/components/Home';
@@ -20,6 +20,7 @@ import RouteTracker from './RouteTracker';
 import SCCC from './SCCC';
 import Lessee from '/src/components/Lessee';
 import PermitMaster from './PermitMaster';
+import Reports from './Reports';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -27,11 +28,12 @@ const App = () => {
 
   const handleLoadingComplete = () => {
     setLoadingComplete(true);
+    
   };
-
   return (
     <Router>
-      {!loadingComplete ? (
+      {
+      !loadingComplete ? (
         <LogoLoad onLoadingComplete={handleLoadingComplete} />
       ) : (
         <>
@@ -60,6 +62,8 @@ const App = () => {
               <Route path="/SCCC" element={<SCCC />} />
               <Route path="/lessee" element={<Lessee />} />
               <Route path="/permitmaster" element={<PermitMaster />} />
+              <Route path='/reports' element={<Reports/>}/>
+              <Route path='/forms' element={<Checkposts/>}/>
               </>
             ) : (<Route
               path="/checkposts"

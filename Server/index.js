@@ -9,7 +9,6 @@ const checkposts = require("./routes/checkposts");
 const transportdetails = require("./routes/transportdetails");
 const eligibility = require("./routes/eligibility");
 const quarry = require("./routes/quarry")
-const routess=require("./routes/routess_route")
 const routesss=require("./routes/routess")
 const getroutes=require("./routes/get_route")
 const employee=require("./routes/employee")
@@ -28,6 +27,9 @@ const getQuarry=require("./routes/get_Quarry")
 const getDrivers=require("./routes/get_driver")
 const getEligibilities=require("./routes/get_Eligibilities")
 const putELigibilities=require("./routes/put_Eligibility")
+const getCheckpost=require("./routes/get_Checkposts")
+const getDuty=require("./routes/get_duty")
+const getroutetracker=require("./routes/get_RouteTracker")
 
 // database connection
 connection();
@@ -43,7 +45,6 @@ app.use("/api/checkposts", checkposts);
 app.use("/api/transportdetails", transportdetails);
 app.use("/api/eligibility", eligibility);
 app.use("/api/quarry", quarry);
-app.use("/api/checkposts",routess);
 app.use("/api/routes",routesss);
 app.use("/api/routes",getroutes);
 app.use("/api/employee",employee);
@@ -62,6 +63,9 @@ app.use("/api/quarry",getQuarry)
 app.use("/api/transportdetails",getDrivers)
 app.use("/api/eligibility",getEligibilities)
 app.use("/api/eligibility",putELigibilities)
+app.use("/api/checkposts",getCheckpost)
+app.use("/api/duties",getDuty)
+app.use("/api/routetrackers",getroutetracker)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

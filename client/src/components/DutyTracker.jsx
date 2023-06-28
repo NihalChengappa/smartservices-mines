@@ -32,7 +32,8 @@ const DutyTracker = () => {
   const getRoutes = async()=>{
     try {
         const response=await axios.get('http://localhost:8080/api/routes')
-        const options=response.data.map((route)=>({
+        const routeNames = response.data.map((route) => route.routeName);
+        const options=routeNames.map((route)=>({
             value: route,
             label: route,
         }))
