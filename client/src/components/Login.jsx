@@ -64,7 +64,7 @@ const Login = ({ setIsAuthenticated }) => {
 
   if (successlogin) {
     return (
-      <Navigate to="/checkposts" /> 
+      <Navigate to="/forms" /> 
     );
   }
 

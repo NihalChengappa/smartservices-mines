@@ -21,11 +21,13 @@ import SCCC from './SCCC';
 import Lessee from '/src/components/Lessee';
 import PermitMaster from './PermitMaster';
 import Reports from './Reports';
+import Sidebar from './Sidebar';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+  const tok=localStorage.getItem('token')
+  
   const handleLoadingComplete = () => {
     setLoadingComplete(true);
     
@@ -63,7 +65,7 @@ const App = () => {
               <Route path="/lessee" element={<Lessee />} />
               <Route path="/permitmaster" element={<PermitMaster />} />
               <Route path='/reports' element={<Reports/>}/>
-              <Route path='/forms' element={<Checkposts/>}/>
+              <Route path='/forms' element={<Sidebar/>}/>
               </>
             ) : (<Route
               path="/checkposts"

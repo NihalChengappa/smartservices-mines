@@ -272,8 +272,8 @@ const PermitMaster = () => {
     <form onSubmit={handleSubmit}>
     <div ref={printRef} >
     <div>
-      <img class="hide-in-app" src={govt} alt="Print Image" />
-      <img class="watermark" src={govt} alt="Print Image" />
+      <img className="hide-in-app" src={govt} alt="Print Image" />
+      <img className="watermark" src={govt} alt="Print Image" />
     </div>
     <h2 className='subhead2'>MINOR MINERAL TRANSPORTAION DETAILS</h2>
     <h2 className='subhead1'>Seignorage Fee and Consideration Amount Collection Contract(SCCC) Awardee Details</h2>
