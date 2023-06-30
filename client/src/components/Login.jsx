@@ -25,6 +25,7 @@ const Login = ({ setIsAuthenticated }) => {
 
     if (token && expirationTime) {
       const currentTime = Date.now();
+      console.log(currentTime,expirationTime)
       if (currentTime < expirationTime) {
         setLogin(true);
         setIsAuthenticated(true); 
@@ -47,7 +48,6 @@ const Login = ({ setIsAuthenticated }) => {
     try {
       const url = 'http://localhost:8080/api/auth';
       const response = await axios.post(url, { user, pwd });
-      setLogin(true);
       localStorage.setItem('token', response.data.data);
       localStorage.setItem('email',response.data.email);
       localStorage.setItem('expirationTime', response.data.timeleft);
@@ -69,8 +69,14 @@ const Login = ({ setIsAuthenticated }) => {
     try {
       const res = await axios.get('http://localhost:8080/api/employee');
       localStorage.setItem('role',res.data.filter((item) => item.emailID === user)[0].role)
+      setLogin(true); 
     } catch (error) {
-      console.error('Error retrieving role:', error);
+      setError('Employee has to be registered!');
+      localStorage.removeItem('token');
+      localStorage.removeItem('email');
+      localStorage.removeItem('expirationTime');
+      errlog.current.focus();
+      <Navigate to="/login" /> 
     }
   };
   if (successlogin) {
