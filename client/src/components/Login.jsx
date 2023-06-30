@@ -33,6 +33,8 @@ const Login = ({ setIsAuthenticated }) => {
         setIsAuthenticated(false); 
         localStorage.removeItem('token');
         localStorage.removeItem('expirationTime');
+        localStorage.removeItem('email');
+        localStorage.removeItem('role');
       }
     } else {
       setLogin(false);
@@ -46,10 +48,11 @@ const Login = ({ setIsAuthenticated }) => {
       const url = 'http://localhost:8080/api/auth';
       const response = await axios.post(url, { user, pwd });
       setLogin(true);
-      setIsAuthenticated(true); // Set the authentication status in the App component
       localStorage.setItem('token', response.data.data);
       localStorage.setItem('email',response.data.email);
       localStorage.setItem('expirationTime', response.data.timeleft);
+      await fetchRole();
+      setIsAuthenticated(true);
     } catch (error) {
       if (
         error.response &&
@@ -61,10 +64,18 @@ const Login = ({ setIsAuthenticated }) => {
       }
     }
   };
-
+  
+  const fetchRole = async () => {
+    try {
+      const res = await axios.get('http://localhost:8080/api/employee');
+      localStorage.setItem('role',res.data.filter((item) => item.emailID === user)[0].role)
+    } catch (error) {
+      console.error('Error retrieving role:', error);
+    }
+  };
   if (successlogin) {
     return (
-      <Navigate to="/forms" /> 
+      <Navigate to="/home" /> 
     );
   }
 

@@ -11,6 +11,7 @@ const Navbar = () => {
       localStorage.removeItem('token');
       localStorage.removeItem('email');
       localStorage.removeItem('expirationTime');
+      localStorage.removeItem('role');
       return <Navigate to="/login" />;
     }
   };
@@ -26,10 +27,18 @@ const Navbar = () => {
         </li>
         {tok ? (
           <>
-            <li>
+          {
+            localStorage.getItem('role')==='Operator'?(
+              <li>
               <Link to="/reports">Reports</Link>
               <Link to="/forms">Forms</Link>
+              </li>
+            ):(
+              <li>
+              <Link to="/forms">Forms</Link>
             </li>
+            )
+          }
             <li>
               <Link to="/login" onClick={handleLogout}>Logout</Link>
             </li>

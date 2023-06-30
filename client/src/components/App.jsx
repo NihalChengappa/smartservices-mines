@@ -1,4 +1,4 @@
-import React, { useState,useHistory } from 'react';
+import React, { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '/src/components/Navbar';
 import Home from '/src/components/Home';
@@ -26,55 +26,58 @@ import Sidebar from './Sidebar';
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
-  const tok=localStorage.getItem('token')
-  
   const handleLoadingComplete = () => {
     setLoadingComplete(true);
     
   };
   return (
     <Router>
-      {
-      !loadingComplete ? (
-        <LogoLoad onLoadingComplete={handleLoadingComplete} />
-      ) : (
-        <>
-          <Navbar />
-          <img src={sslogoapp} className="sslogoapp" alt="ssogoapp" />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/login"
-              element={<Login setIsAuthenticated={setIsAuthenticated} />}
-            />
-            <Route path="/register" element={<Register />} />
-            {isAuthenticated ? (
+  {!loadingComplete ? (
+    <LogoLoad onLoadingComplete={handleLoadingComplete} />
+  ) : (
+    <>
+      <Navbar />
+      <img src={sslogoapp} className="sslogoapp" alt="ssogoapp" />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
+        <Route path="/register" element={<Register />} />
+        {isAuthenticated ? (
               <>
-              <Route path="/checkposts" element={<Checkposts />} />
-              <Route path="/employee" element={<Employee />} />
-              <Route path="/transportdetails" element={<TransportDetails />} />
-              <Route path="/eligibility" element={<Eligibility />} />
-              <Route path="/quarry" element={<Quarry />} />
-              <Route path="/routes" element={<Routess />} />
-              <Route path="/teams" element={<Teams />} />
-              <Route path="/duty" element={<DutyTracker />} />
-              <Route path="/routetracker" element={<RouteTracker />} />
-              <Route path="/SCCC" element={<SCCC />} />
-              <Route path="/lessee" element={<Lessee />} />
-              <Route path="/permitmaster" element={<PermitMaster />} />
-              <Route path='/reports' element={<Reports/>}/>
-              <Route path='/forms' element={<Sidebar/>}/>
+                {localStorage.getItem('role') === 'Operator' ? (
+                  <>
+                    <Route path="/checkposts" element={<Checkposts />} />
+                    <Route path="/employee" element={<Employee />} />
+                    <Route path="/transportdetails" element={<TransportDetails />} />
+                    <Route path="/eligibility" element={<Eligibility />} />
+                    <Route path="/quarry" element={<Quarry />} />
+                    <Route path="/routes" element={<Routess />} />
+                    <Route path="/teams" element={<Teams />} />
+                    <Route path="/duty" element={<DutyTracker />} />
+                    <Route path="/SCCC" element={<SCCC />} />
+                    <Route path="/lessee" element={<Lessee />} />
+                    <Route path="/routetracker" element={<RouteTracker />} />
+                    <Route path="/permitmaster" element={<PermitMaster />} />
+                    <Route path="/reports" element={<Reports />} />
+                    <Route path="/forms" element={<Sidebar />} />
+                  </>
+                ) : (
+                  <>
+                    <Route path="/forms" element={<Sidebar />} />
+                    <Route path="/routetracker" element={<RouteTracker />} />
+                  </>
+                )}
               </>
-            ) : (<Route
-              path="/checkposts"
-              element={<Navigate to="/login" />}
-            />)}
+            ) : (
+              <Route path="*" element={<Navigate to="/login" />} />
+            )}
           </Routes>
-        </>
-      )}
-    </Router>
+    </>
+  )}
+</Router>
+
   );
 };
 
