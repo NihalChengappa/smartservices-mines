@@ -71,7 +71,7 @@ const Login = ({ setIsAuthenticated }) => {
       localStorage.setItem('role',res.data.filter((item) => item.emailID === user)[0].role)
       setLogin(true); 
     } catch (error) {
-      setError('Employee has to be registered!');
+      setError('Email does not match any Employee!');
       localStorage.removeItem('token');
       localStorage.removeItem('email');
       localStorage.removeItem('expirationTime');
