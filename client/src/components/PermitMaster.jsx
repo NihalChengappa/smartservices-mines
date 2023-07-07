@@ -267,7 +267,7 @@ const PermitMaster = () => {
   };
 
   return (
-    <div >
+    <div  className="permit-master-container">
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
     <form onSubmit={handleSubmit}>
     <div ref={printRef} >

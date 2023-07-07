@@ -9,7 +9,7 @@
   .main-h {
     position: relative;
     color: rgb(0, 0, 0);
-    margin-top: 0px;
+    margin-top: -560px;
     margin-left: 250px;
     display: block !important;
   }
@@ -87,7 +87,7 @@
     position: fixed;
     font-size: 17px;
     color: rgb(0, 0, 0);
-    margin-top: 205px;
+    margin-top: -350px;
     margin-left: 10px;
     display: block !important;
   }
@@ -95,7 +95,7 @@
     position: fixed;
     font-size: 17px;
     color: rgb(0, 0, 0);
-    margin-top: 355px;
+    margin-top: -200px;
     margin-left: 10px;
     display: block !important;
   }
@@ -106,7 +106,7 @@
     position: fixed;
     font-size: 14px;
     color: rgb(0, 0, 0);
-    margin-top: 473px;
+    margin-top: -87px;
     margin-left: 10px;
     display: block !important;
   }
@@ -262,6 +262,7 @@
     position: fixed;
     margin-top: 970px;
     margin-left: 340px;
+    display: block !important;
   }
   .hide-in-app {
     position: fixed;
@@ -352,10 +353,28 @@
 .sign-sccc{
   display: none;
 }
+.qr-code{
+  display: none;
+}
 .consignee textarea {
   resize: both; /* Enables both horizontal and vertical resizing */
   max-width: 200px; /* Limits the maximum width of the textarea */
   max-height: 65px; /* Limits the maximum height of the textarea */
   min-width: 200px; /* Sets a minimum width for the textarea */
   min-height: 65px; /* Sets a minimum height for the textarea */
+}
+body .permit-master-container {
+  margin-top: 200px;
+  display: flex;
+  place-items:inherit;
+  max-width: 1440px;
+  height: 100vh;
+}
+.permit-master-container {
+  margin-top: 100px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
 }
