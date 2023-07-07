@@ -8,9 +8,8 @@
   /* background-color: white; */
   background-image: url('src/assets/truck.png');
   background-color: rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Set the opacity of the entire element, including its content */
-  background-size: cover;
-  background-repeat: no-repeat; /* Prevent image from repeating */
+  opacity: 1; 
+  background-repeat: no-repeat; 
   background-position: center;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

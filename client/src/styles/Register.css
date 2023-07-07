@@ -3,15 +3,17 @@
     width: 100%;
     position: center;
     margin: 0 auto;
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #909094;
-    color: #000
+    background-color: #590381;
+    color: #ffffff
   }
 .register-container h2 {
     text-align: center;
-    color: #000;
+    color: #ffffff;
     margin-bottom: 20px;
   }
   
@@ -93,7 +95,7 @@ section {
 }
 
 .p1r{
-    color: #000000
+    color: #ffffff
 }
 
 .p1r a{
@@ -109,7 +111,7 @@ section {
 }
 
 .p2r a{
-    color: #000000;
+    color: #ffffff;
     text-decoration: inherit;
 }
 .p2r a:hover{

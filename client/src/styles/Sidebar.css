@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -20,7 +20,7 @@
 .sidebar-list li {
   padding: 10px;
   cursor: pointer;
-  background-color: #f8f7f9;
+  background-color: #590381;
   color: #f8f7f8;
 }
 
@@ -29,15 +29,15 @@
 }
 
 .sidebar-list li.active {
-  background-color: #590381;
+  background-color: #1a87a9;
   color: white;
 }
 
 .sidebar-list li.active .sidebar{
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .sidebar-link {
-  color: #590381;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-family: "Lucida Console", monospace;
@@ -45,11 +45,11 @@
 }
 
 .sidebar-link:hover {
-  color: white;
-  background-color: #590381;
+  color: rgb(18, 103, 173);
+  background-color: #f7f7f7;
 }
 
 .sidebar-list li.active .sidebar-link {
-  background-color: #590381;
+  background-color: #1a87a9;
   color: white;
 }

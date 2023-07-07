@@ -11,14 +11,14 @@ const Sidebar = () => {
       <ul className="sidebar-list">
       {role === "Operator" ? (
     <>
+        <li className={location.pathname === '/routetracker' ? 'active' : ''}>
+          <Link to="/routetracker" className="sidebar-link">ROUTE TRACKER</Link>
+        </li>
         <li className={location.pathname === '/checkposts' ? 'active' : ''}>
           <Link to="/checkposts" className="sidebar-link">CHECKPOSTS</Link>
         </li>
         <li className={location.pathname === '/employee' ? 'active' : ''}>
           <Link to="/employee" className="sidebar-link">EMPLOYEE</Link>
-        </li>
-        <li className={location.pathname === '/routetracker' ? 'active' : ''}>
-          <Link to="/routetracker" className="sidebar-link">ROUTE TRACKER</Link>
         </li>
         <li className={location.pathname === '/routes' ? 'active' : ''}>
           <Link to="/routes" className="sidebar-link">ROUTES</Link>

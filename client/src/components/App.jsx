@@ -10,7 +10,6 @@ import Checkposts from '/src/components/Checkposts';
 import TransportDetails from '/src/components/TransportDetails';
 import Eligibility from '/src/components/Eligibility';
 import Quarry from '/src/components/Quarry';
-import sslogoapp from '/src/assets/sslogo.png';
 import Routess from './Routess';
 import Employee from './Employee';
 import '/src/styles/App.css'

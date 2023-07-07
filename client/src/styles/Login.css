@@ -5,13 +5,13 @@
   padding: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #909094;
-  color: #000
+  background-color: #590381;
+  color: #ffffff
 }
 
 .login-container h2 {
   text-align: center;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .p1l {
-  color: #000000;
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .bthl a{
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 .offscreen {

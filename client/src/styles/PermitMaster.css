@@ -364,7 +364,7 @@
   min-height: 65px; /* Sets a minimum height for the textarea */
 }
 body .permit-master-container {
-  margin-top: 200px;
+  margin-top: 160px;
   display: flex;
   place-items:inherit;
   max-width: 1440px;
