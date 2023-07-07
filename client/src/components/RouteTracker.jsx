@@ -147,8 +147,9 @@ const RouteTracker = () => {
   };
 
   return (
-    <div>
+    <div >
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+      <div className="route-tracker-container">
     <form onSubmit={handleSubmit} >
       <h1>Route Tracker</h1>
       {showPreview && (
@@ -163,7 +164,6 @@ const RouteTracker = () => {
       )}
       {!showPreview && (
         <div>
-          <h2>Take a Selfie:</h2>
           {showSelfieLabel && (
             <div>
               <label>Selfie:</label>
@@ -213,6 +213,7 @@ const RouteTracker = () => {
         </div>
       )}
     </form>
+    </div>
     </div>
   );
 };
