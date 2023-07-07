@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import '/src/styles/DutyTracker.css';
 
 const DutyTracker = () => {
   const [date, setDate] = useState(getFormattedDate());
@@ -75,46 +76,82 @@ const DutyTracker = () => {
   }
 
   return (
-    <div>
-        <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h2>Duty Tracker</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="date">Date:</label>
-          <input
-            type="date"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="teamId">Team ID:</label>
-          <select value={teamId} onChange={handleTeamChange}>
-            <option value={""}>Select Team-ID</option>
-            {teams.map((options)=>(
-                <option key={options.value} value={options.value}>
-                    {options.label}
-                </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="route">Route:</label>
-          <select value={route} onChange={handleRouteChange}>
-            <option value={""}>Select Route</option>
-            {routes.map((options)=>(
-                <option key={options.value} value={options.value}>
-                    {options.label}
-                </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="container-duty-tracker">
+      <Sidebar pageWrapId="page-wrap" outerContainerId="outer-container" />
+      <div className="dt-form-container">
+        <h2 style={{ textAlign: 'center' }}>Duty Tracker Form</h2>
+        <form onSubmit={handleSubmit}>
+          <table className="duty-tracker-table">
+            <tbody>
+              <tr>
+                <td htmlFor="date" align="right">
+                  Date:
+                </td>
+                <td align="left">
+                  <div className="dt-input-container">
+                    <input
+                      type="date"
+                      id="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      required
+                    />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td htmlFor="teamId" align="right">
+                  Team ID:
+                </td>
+                <td align="left">
+                  <div className="dt-input-container">
+                    <select
+                      id="teamId"
+                      value={teamId}
+                      onChange={handleTeamChange}
+                      required
+                    >
+                      <option value="">Select Team ID</option>
+                      {teams.map((options) => (
+                        <option key={options.value} value={options.value}>
+                          {options.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td htmlFor="route" align="right">
+                  Route:
+                </td>
+                <td align="left">
+                  <div className="dt-input-container">
+                    <select
+                      id="route"
+                      value={route}
+                      onChange={handleRouteChange}
+                      required
+                    >
+                      <option value="">Select Route</option>
+                      {routes.map((options) => (
+                        <option key={options.value} value={options.value}>
+                          {options.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit" className="dt-center-button">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
-  );
+);
 };
 
 export default DutyTracker;

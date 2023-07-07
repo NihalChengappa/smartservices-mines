@@ -1,0 +1,70 @@
+.container {
+  margin: 20px;
+  background-color: #f3e2e2;
+}
+
+.eligibility-form-container {
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+
+.eligibility-form-container form {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+}
+
+.eligibility-form-container button {
+  padding: 10px 15px;
+  background-color: #ed0a52;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.space-line {
+  margin-bottom: 20px;
+}
+
+.center-button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eligibility-form-group {
+  display: flex;
+  align-items: center;
+}
+
+.eligibility-form-group input {
+  box-sizing: border-box;
+}
+
+.checkpost-table {
+  width: 100%;
+}
+
+.checkpost-table td {
+  border: none;
+}
+
+.eligibility-form-group {
+  padding: 3px;
+  background-color: #3d1256;
+}
+
+.space-line {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.center-button {
+  display: block;
+  margin: 20px auto;
+}
+

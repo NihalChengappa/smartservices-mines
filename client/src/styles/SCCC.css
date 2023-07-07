@@ -1,0 +1,75 @@
+.container-sccc {
+    margin: 20px;
+    background-color: #f3e2e2;
+  }
+  
+  .sccc-form-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    background-color: #3d1256;
+  }
+  
+  .container-sccc form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  .container-sccc button {
+    padding: 10px 15px;
+    background-color: #ed0a52;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+  
+  .container-sccc form button:hover {
+    background-color: #ed0a52 ;
+  }
+  
+  .space-line {
+    margin-bottom: 20px;
+  }
+  
+  .sccc-center-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .sccc-table {
+    width: 100%;
+  }
+  
+  .sccc-table td {
+    border: none;
+  }
+  
+  .sccc-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sccc-input-container input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .sccc-input-container {
+    padding: 3px;
+    background-color: #f9f6fa;
+  }
+  
+  .space-line {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .sccc-center-button {
+    display: block;
+    margin: 20px auto;
+  }
+  

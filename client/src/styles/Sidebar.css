@@ -5,21 +5,51 @@
   right: 0;
   bottom: 0;
   width: 200px;
-  background-color: #848080;
+  color: #f8f7f8;
+  background-color: #590381;
 }
-  
-  .sidebar-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 10;
-  }
-  
-  .sidebar-list li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .sidebar-list li:hover {
-    background-color: #e0e0e0;
-  }
-  
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10;
+  color: #f8f7f8;
+  background-color: #590381;
+}
+
+.sidebar-list li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f8f7f9;
+  color: #f8f7f8;
+}
+
+.sidebar-list li:hover {
+  background-color: #590381;
+}
+
+.sidebar-list li.active {
+  background-color: #590381;
+  color: white;
+}
+
+.sidebar-list li.active .sidebar{
+  color: white;
+}
+.sidebar-link {
+  color: #590381;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Lucida Console", monospace;
+  display: block;
+}
+
+.sidebar-link:hover {
+  color: white;
+  background-color: #590381;
+}
+
+.sidebar-list li.active .sidebar-link {
+  background-color: #590381;
+  color: white;
+}

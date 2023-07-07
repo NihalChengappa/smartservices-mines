@@ -37,7 +37,6 @@ const App = () => {
   ) : (
     <>
       <Navbar />
-      <img src={sslogoapp} className="sslogoapp" alt="ssogoapp" />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/home" element={<Home />} />

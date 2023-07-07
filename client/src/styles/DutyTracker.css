@@ -1,0 +1,64 @@
+/* DutyTracker.css */
+
+.container-duty-tracker {
+    margin: 20px;
+    background-color: #f3e2e2;
+  }
+  
+  .dt-form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    background-color: #3d1256;
+  }
+  
+  .container-duty-tracker form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 0px;
+  }
+  
+  .container-duty-tracker button {
+    padding: 10px 15px;
+    background-color: #ed0a52;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+  
+  .container-duty-tracker button:hover {
+    background-color: #ed0a52;
+  }
+  
+  .dt-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dt-input-container input,
+  .dt-input-container select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .duty-tracker-table {
+    width: 100%;
+  }
+  
+  .duty-tracker-table td {
+    border: none;
+  }
+  
+  .dt-input-container {
+    padding: 3px;
+    background-color: #f9f6fa;
+  }
+  
+  .dt-center-button {
+    display: block;
+    margin: 20px auto;
+  }
+  

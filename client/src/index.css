@@ -3,33 +3,41 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: #CCA464;
-  background-color: #3f3f3f;
-
+  /* color-scheme: light dark; */
+  color: #ed0a52;
+  /* background-color: white; */
+  background-image: url('src/assets/truck.png');
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1; /* Set the opacity of the entire element, including its content */
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position: center;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  height: webkit-fill-available;
 }
 
-/* a {
-  font-weight: 500;
-  color: #3f3f3f; 
-   somehow controls signup page a colour 
-  text-decoration: inherit;
-}
-a:hover {
-  color: #CCA464;
+
+
+/* .background-image {
+  background-image: url('src/assets/sslogo.png');
+  background-color: rgba(0, 0, 0, 0.6); 
+  opacity: 1; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 } */
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   place-items: center;
-  /* min-width: 320px;
-  min-height: 100vh; */
+  max-width: 1440px;
+  height: 100svh;
+  height: -webkit-fill-availabile;
 }
 
 h1 {
@@ -44,9 +52,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #333;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
+  background-color: #ed0a52;
+  text-align: center;
+}
+input {
+  color: black;
+  background-color: white;
 }
 button:hover {
   border-color: #ffffff;

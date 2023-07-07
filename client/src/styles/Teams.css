@@ -1,0 +1,69 @@
+/* Teams.css */
+
+.background-image {
+    background-image: url('path/to/background/image.jpg');
+    /* Add desired background styles */
+  }
+  
+  .container-teams {
+    margin:10px;
+    background-color: #3d1256;
+    padding: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    background-color: #3d1256;
+  }
+  
+  .container-teams form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 2px;
+  }
+  
+  .container-teams button {
+    padding: 10px 15px;
+    background-color: #ed0a52;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+  
+  .container-teams button:hover {
+    background-color: #ed0a52;
+  }
+  
+  .team-input-container {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background-color: #f9f6fa;
+  }
+  
+  .teams-table {
+    width: 100%;
+  }
+  
+  .teams-table td {
+    border: none;
+  }
+  
+  .space-line {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .team-center-button {
+    display: block;
+    margin: 20px auto;
+  }
+  

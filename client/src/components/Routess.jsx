@@ -64,31 +64,45 @@ const Routess = () => {
   return (
     <div>
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h1 className="route-title">Create a Route</h1>
-      <form onSubmit={handleSubmit}>
-      <div className="label">
-        <label className='route-label'>
-          Route Name:
-        </label>
-        <input type="text" value={routeName} onChange={handleRouteNameChange} required />
-      </div>
-      <br></br>
-      <div className="label"></div>
-      <label className='checkposts-mapped'>Checkposts Mapped:</label>
-      <div className="select-container">
-        <Select
-          value={checkposts.filter((checkpost) => selectedCheckposts.includes(checkpost.value))}
-          options={checkposts}
-          isMulti
-          onChange={handleCheckpostChange}
-          className='custom-select'
-        />
-        </div>
-
-        <div className="create-route-button">
-          <button type="submit">Create Route</button>
-        </div>
+      <div className="routes-container">
+      <h2 className="route-title">Create a Route</h2>
+      <form onSubmit={handleSubmit} className="route-form-container">
+        <table className="routess-table">
+          <tbody>
+            <tr>
+              <td htmlFor="routeName" align="right">Route Name:</td>
+              <td align="left">
+                <div className="route-input-container">
+                  <input
+                    type="text"
+                    id="routeName"
+                    value={routeName}
+                    onChange={handleRouteNameChange}
+                    required
+                    className="form-input"
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td htmlFor="checkposts" align="right">Checkposts Mapped:</td>
+              <td align="left">
+                <div className="route-input-container">
+                  <Select
+                    value={checkposts.filter((checkpost) => selectedCheckposts.includes(checkpost.value))}
+                    options={checkposts}
+                    isMulti
+                    onChange={handleCheckpostChange}
+                    className="custom-select"
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" className="route-center-button">Create Route</button>
       </form>
+    </div>
     </div>
   );
 };

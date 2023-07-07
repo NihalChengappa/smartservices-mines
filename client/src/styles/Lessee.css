@@ -1,0 +1,99 @@
+/* lessee.css */
+
+.lessee-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    background-color: #3d1256;
+    max-width: 400px;
+    margin: 50px auto;  
+}
+
+.lessee-title {
+text-align: center;
+margin-top: 10px;
+color: #ed0a52;
+font-size: 35px;
+}
+
+.lessee-container input{
+    padding: 3px;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+}
+.lessee-form input[type="text"] {
+padding: 5px; /* Adjust the padding value as per your preference */
+box-sizing: border-box;
+}
+
+.lessee-form input[type="text"]:focus {
+padding: 5px; /* Adjust the padding value as per your preference */
+box-sizing: border-box;
+}
+.lessee-table {
+width: 100%;
+}
+
+.lessee-table td {
+border: none;
+}
+
+.lessee-label {
+color: #ed0a52;
+text-align: right;
+padding-right: 10px;
+}
+
+.lessee-input {
+width: 100%;
+box-sizing: border-box;
+padding: 5px;
+background-color: #f9f6fa;
+border: none;
+}
+
+.lessee-submit-button {
+display: block;
+margin: 20px auto;
+padding: 10px 15px;
+background-color: #ed0a52;
+color: #fff;
+border: none;
+cursor: pointer;
+transition: background-color 0.25s;
+}
+
+.lessee-submit-button:hover {
+background-color: #ed0a52;
+}
+
+/* .lessee-input-container {
+display: flex;
+align-items: center;
+padding: 3px;
+}
+
+.lessee-input-container input {
+width: 100%;
+box-sizing: border-box;
+}
+.lessee-input-container {
+    padding: 1px;
+    background-color: #f9f6fa;
+  } */
+
+.lessee-input-container {
+display: flex;
+align-items: center;
+}
+
+.lessee-input-container input {
+width: 100%;
+box-sizing: border-box;
+}
+
+.lessee-input-container {
+padding: 3px;
+background-color: #f9f6fa;
+}

@@ -1,0 +1,61 @@
+/* TransportDetails.css */
+
+.container-transport-details {
+  margin: 20px;
+  background-color: #f3e2e2;
+}
+
+.transport-form-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+
+.container-transport-details form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.container-transport-details button {
+  padding: 10px 15px;
+  background-color: #ed0a52;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.container-transport-details button:hover {
+  background-color: #ed0a52;
+}
+
+.transport-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.transport-input-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transport-details-table {
+  width: 100%;
+}
+
+.transport-details-table td {
+  border: none;
+}
+
+.transport-input-container {
+  padding: 3px;
+  background-color: #f9f6fa;
+}
+
+.transport-center-button {
+  display: block;
+  margin: 20px auto;
+}

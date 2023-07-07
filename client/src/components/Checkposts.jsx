@@ -1,7 +1,7 @@
+import '/src/styles/Checkposts.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
-
 const Checkposts = () => {
   const [checkpostID, setCheckpostID] = useState('');
   const [name, setName] = useState('');
@@ -30,50 +30,77 @@ const Checkposts = () => {
     };
 
   return (
-    <div>
+    <div class="background-image">
+    <div className="containercheckpost">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />   
-      <h2>Checkpost Form</h2>
+      <div className="chk-form-container">
+      <h2 style={{textAlign:"center"}}>Checkpost Form</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="checkpostID">Checkpost ID*</label>
-          <input
-            type="text"
-            id="checkpostID"
-            value={checkpostID}
-            onChange={(e) => setCheckpostID(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="name">Name*</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="town">Town</label>
-          <input
-            type="text"
-            id="town"
-            value={town}
-            onChange={(e) => setTown(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="division">Division</label>
-          <input
-            type="text"
-            id="division"
-            value={division}
-            onChange={(e) => setDivision(e.target.value)}
-          />
-        </div>
-        <button type="submit">Submit</button>
+        <table className="checkpost-table">
+          <tbody>
+            <tr>
+              <td htmlFor="checkpostID" align="right">Checkpost ID*</td>
+              <td align="left">
+                <div className="chk-input-container">
+                  <input
+                    type="text"
+                    id="checkpostID"
+                    value={checkpostID}
+                    onChange={(e) => setCheckpostID(e.target.value)}
+                    required
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td htmlFor="name" align="right">Name*</td>
+              <td align="left">
+                <div className="chk-input-container">
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td htmlFor="town" align="right">Town</td>
+              <td align="left">
+                <div className="chk-input-container">
+                  <input
+                    type="text"
+                    id="town"
+                    value={town}
+                    onChange={(e) => setTown(e.target.value)}
+                    required
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td htmlFor="division" align="right">Division</td>
+              <td align="left">
+                <div className="chk-input-container">
+                  <input
+                    type="text"
+                    id="division"
+                    value={division}
+                    onChange={(e) => setDivision(e.target.value)}
+                    required
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {/* <div className="space-line" /> */}
+        <button type="submit" className="chk-center-button">Submit</button>
       </form>
+      </div>
+    </div>
     </div>
   );
 };

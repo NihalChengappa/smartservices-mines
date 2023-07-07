@@ -1,0 +1,84 @@
+.containeremployee {
+    margin: 20px;
+    background-color: #f9f6fa;
+    color: #ed0a52;
+  }
+  
+  .employeeform-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    color: #ed0a52;
+    background-color: #3d1256;
+  }
+  
+  .employeeform-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .employeeform-container form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .employeeform-container label {
+    margin-bottom: 10px;
+    color: #ed0a52;
+  }
+  
+  .employeeform-container input,
+  .employeeform-container select {
+    padding: 3px;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+  }
+  
+  .employeeform-container select {
+    width: 100%;
+  }
+  
+  .employeeform-container button {
+    padding: 10px 15px;
+    background-color: #ed0a52;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+  
+  .employeeform-container button:hover {  
+    background-color: #ed0a52;
+  }
+  
+  
+  .emp-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .emp-input-container input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .employee-table {
+    width: 100%;
+  }
+  
+  .employee-table td {
+    border: none;
+  }
+  
+  .emp-input-container {
+    padding: 1px;
+    background-color: #f9f6fa;
+  }
+
+.emp-center-button {
+  display: block;
+  margin: 20px auto;
+}

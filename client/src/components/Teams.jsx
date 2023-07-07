@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import '/src/styles/Teams.css';
 
 const Teams = () => {
   const [teamId, setTeamId] = useState('');
@@ -64,46 +65,74 @@ const Teams = () => {
 
 
   return (
-    <div>
-    <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h2>Create a Team</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="teamId">Team ID:</label>
-          <input
-            type="text"
-            id="teamId"
-            value={teamId}
-            onChange={(e) => setTeamId(e.target.value)}
-            required
-          />
+    <div className="background-image">
+      <div className="container-teams">
+        <Sidebar pageWrapId="page-wrap" outerContainerId="outer-container" />
+        <div className="team-form-container">
+          <h2 style={{textAlign:"center"}}>Create a Team</h2>
+          <form onSubmit={handleSubmit}>
+            <table className="teams-table">
+              <tbody>
+                <tr>
+                  <td htmlFor="teamId" align="right">
+                    Team ID*
+                  </td>
+                  <td align="left">
+                    <div className="team-input-container">
+                      <input
+                        type="text"
+                        id="teamId"
+                        value={teamId}
+                        onChange={(e) => setTeamId(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="member1" align="right">
+                    Member 1*
+                  </td>
+                  <td align="left">
+                    <div className="team-input-container">
+                      <select value={member1} onChange={handleMember1Change} required>
+                        <option value="">Select Member</option>
+                        <option value="">No Member</option>
+                        {members.map((options) => (
+                          <option key={options.value} value={options.value}>
+                            {options.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="member2" align="right">
+                    Member 2*
+                  </td>
+                  <td align="left">
+                    <div className="team-input-container">
+                      <select value={member2} onChange={handleMember2Change} required>
+                        <option value="">Select Member</option>
+                        <option value="">No Member</option>
+                        {members.map((options) => (
+                          <option key={options.value} value={options.value}>
+                            {options.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" className="team-center-button">
+              Create Team
+            </button>
+          </form>
         </div>
-        <div>
-          <label htmlFor="member1">Member 1:</label>
-          <select value={member1} onChange={handleMember1Change}>
-            <option value={""}>Select Member</option>
-            <option value={""}>No Member</option>
-            {members.map((options)=>(
-                <option key={options.value} value={options.value}>
-                    {options.label}
-                </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="member2">Member 2:</label>
-          <select value={member2} onChange={handleMember2Change}>
-            <option value={""}>Select Member</option>
-            <option value={""}>No Member</option>
-            {members.map((options)=>(
-                <option key={options.value} value={options.value}>
-                    {options.label}
-                </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit">Create Team</button>
-      </form>
+      </div>
     </div>
   );
 };

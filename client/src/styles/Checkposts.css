@@ -1,0 +1,74 @@
+/* Checkposts.css */
+
+.containercheckpost {
+    margin: 20px;
+    background-color: #f3e2e2;
+    
+  }
+  
+.chk-form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+    background-color: #3d1256;
+  }
+.containercheckspost form {
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+.containercheckpost button {
+    padding: 10px 15px;
+    background-color: #ed0a52;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+  
+
+.space-line {
+margin-bottom: 20px;
+}
+
+.chk-center-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.chk-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.chk-input-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.checkpost-table {
+  width: 100%;
+}
+
+.checkpost-table td {
+  border: none;
+}
+
+.chk-input-container {
+  padding: 3px;
+  background-color: #f9f6fa;
+}
+
+.space-line {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chk-center-button {
+  display: block;
+  margin: 20px auto;
+}

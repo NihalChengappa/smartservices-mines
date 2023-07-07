@@ -1,3 +1,4 @@
+import '/src/styles/Employee.css';
 import React, { useState,useEffect } from 'react';
 import Sidebar from './Sidebar';
 import axios from 'axios';
@@ -125,105 +126,149 @@ const Employee = () => {
   const isMobileSquad = role === 'Mobile Squad';
 
   return (
-    <div>
+    <div className='containeremployee'>
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h1>Employee Form</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Employee ID:
-          <input
-            type="text"
-            value={employeeId}
-            onChange={handleEmployeeIdChange}
-            required
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Email ID:
-          <input
-            type="text"
-            value={emailID}
-            onChange={handleEmailChange}
-            required
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Name:
-          <input type="text" value={name} onChange={handleNameChange} required />
-        </label>
-        <br />
-        <br />
-        <label>
-          Phone Number:
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Role:
-          <select value={role} onChange={handleRoleChange} required>
-            <option value="">Select Role</option>
-            <option value="Operator">Operator</option>
-            <option value="Checkpost op">Checkpost op</option>
-            <option value="Mobile Squad">Mobile Squad</option>
-          </select>
-        </label>
-        <br />
-        <br />
-        {isCheckpostOp && (
-          <>
-            <label>
-              Checkpost Name:
-              <select value={checkpostName} onChange={handleCheckpostNameChange}>
+      <div className='employeeform-container'>
+      <h1 style={{color:"#ed0a52", textAlign: "center"}}>Employee Form</h1>
+      <form onSubmit={handleSubmit} className="employee-form">
+  <table className="employee-table">
+    <tbody>
+      <tr>
+        <td htmlFor="employeeId" align="right">Employee ID:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <input
+              type="text"
+              id="employeeId"
+              value={employeeId}
+              onChange={handleEmployeeIdChange}
+              required
+            />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td htmlFor="emailID" align="right">Email ID:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <input
+              type="text"
+              id="emailID"
+              value={emailID}
+              onChange={handleEmailChange}
+              required
+            />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td htmlFor="name" align="right">Name:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={handleNameChange}
+              required
+            />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td htmlFor="phoneNumber" align="right">Phone Number:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <input
+              type="text"
+              id="phoneNumber"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+            />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td htmlFor="role" align="right">Role:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <select
+              id="role"
+              value={role}
+              onChange={handleRoleChange}
+              required
+            >
+              <option value="">Select Role</option>
+              <option value="Operator">Operator</option>
+              <option value="Checkpost op">Checkpost op</option>
+              <option value="Mobile Squad">Mobile Squad</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+      {isCheckpostOp && (
+        <tr>
+          <td htmlFor="checkpostName" align="right">Checkpost Name:</td>
+          <td align="left">
+            <div className="emp-input-container">
+              <select
+                id="checkpostName"
+                value={checkpostName}
+                onChange={handleCheckpostNameChange}
+              >
                 <option value="">Select Checkpost</option>
                 {checkposts.map((option) => (
-                <option key={option.value} value={option.value}>
+                  <option key={option.value} value={option.value}>
                     {option.label}
-                </option>
+                  </option>
                 ))}
-            </select>
-            </label>
-            <br />
-            <br />
-          </>
-        )}
-        {isMobileSquad && (
-          <>
-            <label>
-              Route Name:
-              <select value={routeName} onChange={handleRouteNameChange}>
+              </select>
+            </div>
+          </td>
+        </tr>
+      )}
+      {isMobileSquad && (
+        <tr>
+          <td htmlFor="routeName" align="right">Route Name:</td>
+          <td align="left">
+            <div className="emp-input-container">
+              <select
+                id="routeName"
+                value={routeName}
+                onChange={handleRouteNameChange}
+              >
                 <option value="">Select Route</option>
                 {routes.map((option) => (
-                <option key={option.value} value={option.value}>
+                  <option key={option.value} value={option.value}>
                     {option.label}
-                </option>
+                  </option>
                 ))}
-            </select>
-            </label>
-            <br />
-            <br />
-          </>
-        )}
-        <label>
-          Company Name:
-          <input
-            type="text"
-            value={companyName}
-            onChange={handleCompanyNameChange}
-          />
-        </label>
-        <br />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+              </select>
+            </div>
+          </td>
+        </tr>
+      )}
+      <tr>
+        <td htmlFor="companyName" align="right">Company Name:</td>
+        <td align="left">
+          <div className="emp-input-container">
+            <input
+              type="text"
+              id="companyName"
+              value={companyName}
+              onChange={handleCompanyNameChange}
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {/* <div className="space-line" /> */}
+  <button type="submit" className="emp-center-button">Submit</button>
+</form>
+
+
+    </div>
     </div>
   );
 };

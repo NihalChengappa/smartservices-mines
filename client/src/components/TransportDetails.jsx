@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import '/src/styles/TransportDetails.css';
 
 const TransportDetails = () => {
   const [vehicleNo, setvehicleNo] = useState('');
@@ -25,43 +26,72 @@ const TransportDetails = () => {
   };
 
   return (
-    <div>
-      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h2>Transport Details Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="vehicleNo">Vehicle Number*</label>
-          <input
-            type="text"
-            id="vehicleNo"
-            value={vehicleNo}
-            onChange={(e) => setvehicleNo(e.target.value)}
-            required
-          />
+    // <div className="background-image">
+      <div className="container-transport-details">
+        <Sidebar pageWrapId="page-wrap" outerContainerId="outer-container" />
+        <div className="transport-form-container">
+          <h2 style={{ textAlign: 'center' }}>Transport Details Form</h2>
+          <form onSubmit={handleSubmit}>
+            <table className="transport-details-table">
+              <tbody>
+                <tr>
+                  <td htmlFor="vehicleNo" align="right">
+                    Vehicle Number:
+                  </td>
+                  <td align="left">
+                    <div className="transport-input-container">
+                      <input
+                        type="text"
+                        id="vehicleNo"
+                        value={vehicleNo}
+                        onChange={(e) => setvehicleNo(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="driverName" align="right">
+                    Driver Name:
+                  </td>
+                  <td align="left">
+                    <div className="transport-input-container">
+                      <input
+                        type="text"
+                        id="driverName"
+                        value={driverName}
+                        onChange={(e) => setdriverName(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="driverLicenseNo" align="right">
+                    Driver License Number:
+                  </td>
+                  <td align="left">
+                    <div className="transport-input-container">
+                      <input
+                        type="text"
+                        id="driverLicenseNo"
+                        value={driverLicenseNo}
+                        onChange={(e) => setdriverLicenseNo(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <button  style={{textAlign:"center"}}type="submit" className="transport-center-button">
+              Submit
+            </button>
+              </tbody>
+            </table>
+            
+          </form>
         </div>
-        <div>
-          <label htmlFor="driverName">Driver Name*</label>
-          <input
-            type="text"
-            id="driverName"
-            value={driverName}
-            onChange={(e) => setdriverName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="driverLicenseNo">Driver License Number*</label>
-          <input
-            type="text"
-            id="driverLicenseNo"
-            value={driverLicenseNo}
-            onChange={(e) => setdriverLicenseNo(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      </div>
+    // </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import axios from 'axios';
+import '/src/styles/SCCC.css';
 
 const SCCC = () => {
   const [contractorName, setContractorName] = useState('');
@@ -26,57 +27,102 @@ const SCCC = () => {
   };
 
   return (
-    <div>
-        <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h1>SCCC Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Contractor Name:</label>
-          <input
-            type="text"
-            value={contractorName}
-            onChange={(e) => setContractorName(e.target.value)}
-            required
-          />
+    <div className="background-image">
+      <div className="container-sccc">
+        <Sidebar pageWrapId="page-wrap" outerContainerId="outer-container" />
+        <div className="sccc-form-container">
+          <h2 style={{ textAlign: 'center' }}>SCCC Form</h2>
+          <form onSubmit={handleSubmit}>
+            <table className="sccc-table">
+              <tbody>
+                <tr>
+                  <td htmlFor="contractorName" align="right">
+                    Contractor Name:
+                  </td>
+                  <td align="left">
+                    <div className="sccc-input-container">
+                      <input
+                        type="text"
+                        id="contractorName"
+                        value={contractorName}
+                        onChange={(e) => setContractorName(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="agreementNo" align="right">
+                    Agreement No:
+                  </td>
+                  <td align="left">
+                    <div className="sccc-input-container">
+                      <input
+                        type="text"
+                        id="agreementNo"
+                        value={agreementNo}
+                        onChange={(e) => setAgreementNo(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="gstRegistrationNo" align="right">
+                    GST Registration No:
+                  </td>
+                  <td align="left">
+                    <div className="sccc-input-container">
+                      <input
+                        type="text"
+                        id="gstRegistrationNo"
+                        value={gstRegistrationNo}
+                        onChange={(e) => setGstRegistrationNo(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="districtAllotted" align="right">
+                    District Allotted:
+                  </td>
+                  <td align="left">
+                    <div className="sccc-input-container">
+                      <input
+                        type="text"
+                        id="districtAllotted"
+                        value={districtAllotted}
+                        onChange={(e) => setDistrictAllotted(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td htmlFor="districtCode" align="right">
+                    District Code:
+                  </td>
+                  <td align="left">
+                    <div className="sccc-input-container">
+                      <input
+                        type="text"
+                        id="districtCode"
+                        value={districtCode}
+                        onChange={(e) => setDistrictCode(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" className="sccc-center-button">
+              Submit
+            </button>
+          </form>
         </div>
-        <div>
-          <label>Agreement No:</label>
-          <input
-            type="text"
-            value={agreementNo}
-            onChange={(e) => setAgreementNo(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>GST Registration No:</label>
-          <input
-            type="text"
-            value={gstRegistrationNo}
-            onChange={(e) => setGstRegistrationNo(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>District Allotted:</label>
-          <input
-            type="text"
-            value={districtAllotted}
-            onChange={(e) => setDistrictAllotted(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>District Code:</label>
-          <input
-            type="text"
-            value={districtCode}
-            onChange={(e) => setDistrictCode(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      </div>
     </div>
   );
 };

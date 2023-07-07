@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import '/src/styles/Lessee.css';
 
 const Lessee = () => {
     const [LesseeID, setLesseeID] = useState('');
@@ -27,40 +28,64 @@ const Lessee = () => {
   return (
     <div>
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      <h2>Lessee Details</h2>
+      <div className="lessee-container">
+      <h2 className="lessee-title">Lessee Details</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="LesseeID">Lessee ID*</label>
-          <input
-            type="text"
-            id="LesseeID"
-            value={LesseeID}
-            onChange={(e) => setLesseeID(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="nameandaddress">Lessee Name & Address*</label>
-          <input
-            type="text"
-            id="nameandaddress"
-            value={nameandaddress}
-            onChange={(e) => setNameandAdress(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="GST">Lessee GST Reg. No.*</label>
-          <input
-            type="text"
-            id="GST"
-            value={GST}
-            onChange={(e) => setGST(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
+        <table className="lessee-table">
+            <tbody>
+              <tr>
+                <td htmlFor="lesseeID" className="lessee-label">
+                  Lessee ID:
+                </td>
+                <td>
+                <div className="lessee-input-container">
+                  <input
+                    type="text"
+                    id="lesseeID"
+                    value={LesseeID}
+                    onChange={(e) => setLesseeID(e.target.value)}
+                    required
+                  />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td htmlFor="nameAndAddress" className="lessee-label">
+                  Lessee Name &amp; Address:
+                </td>
+                <td>
+                <div className="lessee-input-container">
+                  <input
+                    type="text"
+                    id="nameAndAddress"
+                    value={nameandaddress}
+                    onChange={(e) => setNameandAdress(e.target.value)}
+                    required
+                  />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td htmlFor="GST" className="lessee-label">
+                  Lessee GST Reg. No.:
+                </td>
+                <td>
+                <div className="lessee-input-container">
+                  <input
+                    type="text"
+                    id="GST"
+                    value={GST}
+                    onChange={(e) => setGST(e.target.value)}
+                    required
+                  />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <button type="submit" style={{ marginTop: '12px'}}>Submit</button>
       </form>
+    </div>
     </div>
   );
 };
