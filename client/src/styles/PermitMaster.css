@@ -370,11 +370,53 @@ body .permit-master-container {
   max-width: 1440px;
   height: 100vh;
 }
-.permit-master-container {
-  margin-top: 100px;
+.permit-master-container .Transport-details{
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
   background-color: #3d1256;
 }
+.permit-master-container .consignee{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+.permit-master-container .Transit-Form{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+.permit-master-container .Sccc-awardee{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+.permit-master-container .mineral-details{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+.permit-master-container .Mine-details{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+  background-color: #3d1256;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+

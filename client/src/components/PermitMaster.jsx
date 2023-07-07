@@ -296,8 +296,8 @@ const PermitMaster = () => {
         <div className="blue-box">
           {/*  */}
         </div>
+        <h2 className="heading">Transit form</h2>
         <div className='Transit-Form'>
-      <h2 className="heading">Transit form</h2>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
           <tr className='bno-row'>
@@ -374,9 +374,9 @@ const PermitMaster = () => {
         </tbody>
       </table>
     </div>
-
+    
+    <h2 className='mine-head'>Mine Location</h2>
     <div className='Mine-details'>
-      <h2 className='mine-head'>Mine Location</h2>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
           <tr>
@@ -424,8 +424,8 @@ const PermitMaster = () => {
       </table>
     </div>
 
+    <h2 className='cons-head'>Consignee</h2>
     <div className='consignee'>
-      <h2 className='cons-head'>Consignee</h2>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
           <tr>
@@ -435,9 +435,9 @@ const PermitMaster = () => {
         </tbody>
       </table>
     </div>
-
+    
+    <h2 className='trans-head'>Transport Details</h2>
     <div className='Transport-details'>
-      <h2 className='trans-head'>Transport Details</h2>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
           <tr>
@@ -487,14 +487,14 @@ const PermitMaster = () => {
       <QRCode size={100} className="qr-code" bgColor='white' fgColor='black' value={qrCode} ></QRCode>
       </div>
       </div>
-      <div className="form-row">
+      <div className='button-container'>
           <ReactToPrint
-            trigger={() => <button type="button">Print</button>}
+            trigger={() => <button type="button" className='print_button'>Print</button>}
             content={() => printRef.current} // Ref to the component you want to print
           />
-        </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" className='submit_button'>Submit</button>
+      </div>
     </form>
     </div>
   );
