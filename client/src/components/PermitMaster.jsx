@@ -296,7 +296,7 @@ const PermitMaster = () => {
         <div className="blue-box">
           {/*  */}
         </div>
-        <h2 className="heading">Transit form</h2>
+        <h2 className="heading" style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>Transit form</h2>
         <div className='Transit-Form'>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
@@ -313,13 +313,13 @@ const PermitMaster = () => {
             <td><input type="date" id="currentDate" value={currentDate} onChange={(e) => setCurrentDate(e.target.value)} /></td>
           </tr>
           <tr className='validity'>
-            <td><label htmlFor="validUpto">Valid Upto</label></td>
-            <td><input type="date" id="validUpto" value={validUpto} onChange={(e) => setValidUpto(e.target.value)} /></td>
+            <td><label htmlFor="validUpto" style={{color:'blue'}}>Valid Upto</label></td>
+            <td><input type="date" id="validUpto" style={{color:'blue'}} value={validUpto} onChange={(e) => setValidUpto(e.target.value)} /></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <h2 className='scc-head' >SCCC Awardee Details</h2>
+    <h2 className='scc-head' style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>SCCC Awardee Details</h2>
     <div className='Sccc-awardee' style={{ display: 'flex', justifyContent: 'center' }}>
       <table style={{ textAlign: 'center' }}>
         <tbody>
@@ -346,7 +346,7 @@ const PermitMaster = () => {
         </tbody>
       </table>
     </div>
-    <h2 className='min-head'>Mineral Transport Details</h2>
+    <h2 className='min-head' style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>Mineral Transport Details</h2>
     <div className='mineral-details'>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
@@ -375,7 +375,7 @@ const PermitMaster = () => {
       </table>
     </div>
     
-    <h2 className='mine-head'>Mine Location</h2>
+    <h2 className='mine-head' style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>Mine Location</h2>
     <div className='Mine-details'>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
@@ -424,7 +424,7 @@ const PermitMaster = () => {
       </table>
     </div>
 
-    <h2 className='cons-head'>Consignee</h2>
+    <h2 className='cons-head' style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>Consignee</h2>
     <div className='consignee'>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
@@ -436,7 +436,7 @@ const PermitMaster = () => {
       </table>
     </div>
     
-    <h2 className='trans-head'>Transport Details</h2>
+    <h2 className='trans-head' style={{color:'#ed0a52', backgroundColor: '#3d1256'}}>Transport Details</h2>
     <div className='Transport-details'>
       <table className="form-table" style={{ margin: '0 auto' }}>
         <tbody>
@@ -480,7 +480,7 @@ const PermitMaster = () => {
         </tbody>
       </table>
     </div>
-    <h4 className='sign-sccc'>Authorized Signature and Stamp <br/>  of SCC Contractor</h4>
+    <h4 className='sign-sccc' >Authorized Signature and Stamp <br/>  of SCC Contractor</h4>
       <h4 className='sign-driver'>Signature of Driver</h4>
 
       <div className='qr-code'>

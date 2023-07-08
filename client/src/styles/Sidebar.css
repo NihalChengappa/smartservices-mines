@@ -25,7 +25,8 @@
 }
 
 .sidebar-list li:hover {
-  background-color: #590381;
+  background-color: #1a87a9;
+  color: white;
 }
 
 .sidebar-list li.active {
@@ -33,8 +34,9 @@
   color: white;
 }
 
-.sidebar-list li.active .sidebar{
-  color: rgb(255, 255, 255);
+.sidebar-list li.active .sidebar{  
+  background-color: #1a87a9;
+  color: white;
 }
 .sidebar-link {
   color: #ffffff;
@@ -45,8 +47,8 @@
 }
 
 .sidebar-link:hover {
-  color: rgb(18, 103, 173);
-  background-color: #f7f7f7;
+  background-color: #1a87a9;
+  color: white;
 }
 
 .sidebar-list li.active .sidebar-link {
