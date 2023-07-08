@@ -313,8 +313,8 @@ const PermitMaster = () => {
             <td><input type="date" id="currentDate" value={currentDate} onChange={(e) => setCurrentDate(e.target.value)} /></td>
           </tr>
           <tr className='validity'>
-            <td><label htmlFor="validUpto" style={{color:'blue'}}>Valid Upto</label></td>
-            <td><input type="date" id="validUpto" style={{color:'blue'}} value={validUpto} onChange={(e) => setValidUpto(e.target.value)} /></td>
+            <td><label htmlFor="validUpto" >Valid Upto</label></td>
+            <td><input type="date" id="validUpto" value={validUpto} onChange={(e) => setValidUpto(e.target.value)} /></td>
           </tr>
         </tbody>
       </table>

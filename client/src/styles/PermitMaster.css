@@ -254,10 +254,6 @@
 .Transport-details table.form-table td input[type="datetime-local"]::-webkit-clear-button {
   display: none;
 }
-
-  /* .validity{
-
-  } */
   .qr-code{
     position: fixed;
     margin-top: 970px;
@@ -282,6 +278,10 @@
     position: fixed;
     margin-top: 970px;
     margin-left: 65px;
+  }
+  .validity input[type="date"],
+  .validity label{
+    color:#0099ff;
   }
   .sign-driver{
     position: fixed;
@@ -313,7 +313,7 @@
   .watermark {
     position: fixed;
     background-image: url('/src/assets/govt.jpeg');
-    margin-top: 430px;
+    margin-top: -130px;
     margin-left: 205px;
     background-repeat: no-repeat;
     height: 300px;
