@@ -30,7 +30,7 @@ const Checkposts = () => {
     };
 
   return (
-    <div class="background-image">
+    <div className="background-image">
     <div className="containercheckpost">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />   
       <div className="chk-form-container">

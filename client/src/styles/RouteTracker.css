@@ -48,12 +48,17 @@
   .date-container{
     position: absolute;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 25px;
+  }
+  .location-container{
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 0px;
   }
   .time-container{
     position: absolute;
     margin-top: 70px;
-    margin-left: 10px;
+    margin-left: 25px;
   }
   .submit-button{
     position: absolute;
@@ -73,4 +78,5 @@
     box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
     background-color: #3d1256;
     width:700px;
+    margin-left: 100px;
   }

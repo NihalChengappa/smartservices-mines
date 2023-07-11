@@ -4,10 +4,11 @@ const RouteTracker = require('../models/RouteTracker');
 
 router.post('/', async (req, res) => {
   try {
-    const {date,time,teamID,checkpostID,imageData} = req.body;
+    const {date,time,location,teamID,checkpostID,imageData} = req.body;
     const newRouteTracker = new RouteTracker({
         date,
         time,
+        location,
         teamID,
         checkpostID,
         imageData,

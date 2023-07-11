@@ -82,12 +82,11 @@ const TransportDetails = () => {
                     </div>
                   </td>
                 </tr>
-                <button  style={{textAlign:"center"}}type="submit" className="transport-center-button">
-              Submit
-            </button>
               </tbody>
             </table>
-            
+            <button  style={{textAlign:"center"}}type="submit" className="transport-center-button">
+              Submit
+            </button>
           </form>
         </div>
       </div>

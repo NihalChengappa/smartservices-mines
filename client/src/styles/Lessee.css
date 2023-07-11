@@ -68,21 +68,6 @@ transition: background-color 0.25s;
 background-color: #ed0a52;
 }
 
-/* .lessee-input-container {
-display: flex;
-align-items: center;
-padding: 3px;
-}
-
-.lessee-input-container input {
-width: 100%;
-box-sizing: border-box;
-}
-.lessee-input-container {
-    padding: 1px;
-    background-color: #f9f6fa;
-  } */
-
 .lessee-input-container {
 display: flex;
 align-items: center;

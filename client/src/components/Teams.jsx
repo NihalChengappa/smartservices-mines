@@ -54,10 +54,6 @@ const Teams = () => {
             console.log('Error storing data in MongoDB:', error)
         }
       }
-    // Perform form validation and handle form submission logic here
-    // You can check for the uniqueness of the team ID and other validations
-
-    // Reset the form after submission
     setTeamId('');
     setMember1('');
     setMember2('');

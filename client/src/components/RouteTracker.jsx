@@ -15,6 +15,17 @@ const RouteTracker = () => {
   const [showPreview, setShowPreview] = useState(false);
   const [teams, setTeams] = useState([]);
   const [isCameraOpen, setIsCameraOpen] = useState(false); 
+  const[latitude,setLatitude]=useState('')
+  const[longitude,setLongitude]=useState('')
+  const[location,setLocation]=useState('')
+
+  // const API_key=`67ce60a004bcecba44959b238c3f99ac`
+  useEffect(()=>{
+    navigator.geolocation.getCurrentPosition((position)=>{
+      setLatitude(position.coords.latitude)
+      setLongitude(position.coords.longitude)
+    })
+  })
 
   useEffect(() => {
     getTeams();
@@ -23,10 +34,23 @@ const RouteTracker = () => {
     };
   }, []);
 
+  const fetchlocation =async()=>{
+    const final_endpoint=`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+    try {
+      const response=await axios.get(final_endpoint)
+      if(response.data.address['road']){
+        setLocation(`${response.data.address['road']} ${response.data.address['suburb']} ${response.data.address['city']}`)
+      }
+      else{
+        setLocation(`${response.data.address['suburb']} ${response.data.address['city']}`)
+      }
+    } catch (error) {
+      console.error("Error fetching location:",error);
+    }
+  }
   const getTeams = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/teams');
-      console.log(response)
       const team_ids = response.data.map((teamid) => teamid.teamId);
       const options = team_ids.map((team) => ({
         value: team,
@@ -46,7 +70,7 @@ const RouteTracker = () => {
     e.preventDefault();
     try {
       const url="http://localhost:8080/api/routetrackers"
-      const response=await axios.post(url,{date,time,teamID,checkpostID,imageData});
+      const response=await axios.post(url,{date,time,location,teamID,checkpostID,imageData});
       console.log('Data stored in MongoDB:', response.data);
     } catch (error) {
       console.log('Error storing data in MongoDB:', error);
@@ -56,6 +80,7 @@ const RouteTracker = () => {
     setImageData("");
     setTeamID("");
     setTime("");
+    setLocation("");
   };
 
   const startCamera = () => {
@@ -118,8 +143,10 @@ const RouteTracker = () => {
   };
 
   useEffect(()=>{
+    if(latitude && longitude){
     handleScanQRCode();
-  },[]);
+    }
+  },[latitude,longitude]);
   const handleScanQRCode = () => {
     const qrCodeScanner = new Html5QrcodeScanner('qr-code-scanner', {
       fps: 10,
@@ -138,6 +165,7 @@ const RouteTracker = () => {
       setCheckpostID(lines[0]);
       setDate(new Date().toLocaleDateString());
       setTime(new Date().toLocaleTimeString());
+      fetchlocation();
       qrCodeScanner.clear();
     }
     return () => {
@@ -189,6 +217,10 @@ const RouteTracker = () => {
         <label>Date:</label>
         <input type="text" value={date} readOnly />
       </div>
+      <div className="location-container">
+        <label>Location:</label>
+        <input type="text" value={location} readOnly required/>
+      </div>  
       <div className="time-container">
         <label>Time:</label>
         <input type="text" value={time} readOnly />

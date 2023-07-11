@@ -10,6 +10,10 @@ const routeTrackerSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  location: {
+    type: String,
+    required: true
+  },
   teamID: {
     type: String,
     required: true

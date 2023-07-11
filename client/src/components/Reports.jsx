@@ -107,7 +107,7 @@ function generateTable_simple(data) {
   return tableHtml;
 }
 function generateTable_routetrack(data) {
-    const headers = ["_id", "date", "time", "teamID", "checkpostID", "imageData"];
+    const headers = ["_id", "date", "time","location", "teamID", "checkpostID", "imageData"];
     const tableHtml = `
       <table style="border-collapse: collapse;">
         <thead>
