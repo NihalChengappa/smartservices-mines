@@ -16,14 +16,12 @@ const Routess = () => {
   const fetchCheckposts = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/checkposts');
-      // console.log(response.data[-1])
       const checkpostNames = response.data.map((checkpost) => checkpost.name);
       const options = checkpostNames.map((checkpost) => ({
         value: checkpost,
         label: checkpost,
       }));
       setCheckposts(options);
-      console.log(options)
     } catch (error) {
       console.error('Error fetching checkposts:', error);
     }
@@ -31,7 +29,6 @@ const Routess = () => {
 
   const handleCheckpostChange = (selectedOptions) => {
     setSelectedCheckposts(selectedOptions.map((option) => option.value));
-    console.log(selectedCheckposts)
   };
 
   const handleRouteNameChange = (event) => {

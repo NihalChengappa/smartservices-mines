@@ -62,7 +62,6 @@ const PermitMaster = () => {
     } else {
       const forms = response.data;
       const lastEntry = forms[forms.length - 1];
-      console.log(lastEntry)
       const lastFormNumber = parseInt(lastEntry.formNumber);
       const lastBookNumber=parseInt(lastEntry.bookNumber);
       formNumber = (lastFormNumber + 1).toString();
@@ -141,9 +140,7 @@ const PermitMaster = () => {
   }
   const getLicenceDetails=async(licenceno)=>{
     const response = await axios.get('http://localhost:8080/api/transportdetails');
-    console.log(response.data,licenceno)
     const driverdetails = response.data.filter((driver)=>driver.driverLicenseNo===licenceno)
-    console.log(driverdetails)
     setVehicleNo(driverdetails[0].vehicleNo)
     setDriverName(driverdetails[0].driverName)
   }

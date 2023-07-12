@@ -1,48 +1,59 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '/src/styles/Reports.css';
 import axios from 'axios';
 
 const Reports = () => {
   const [selectedOption, setSelectedOption] = useState('');
+  const [tableHtml, setTableHtml] = useState('');
 
-  const handleOptionChange = (event) => {
+  const getDetails= async(event)=>{
     setSelectedOption(event.target.value);
-  };
-
-  const handleGenerateReport = async () => {
-  console.log(`Generating report for option: ${selectedOption}`);
-  const url = `http://localhost:8080/api/${selectedOption}`;
+    console.log(event.target.value)
+  const url = `http://localhost:8080/api/${event.target.value}`;
 
   try {
     const response = await axios.get(url);
     let tableHtml=""
-    if (selectedOption==="checkposts" ||selectedOption==="routes" || selectedOption==="duties" || selectedOption==="employee" || selectedOption==="quarry"|| selectedOption==="permitmaster"|| selectedOption==="teams"|| selectedOption==="transportdetails"|| selectedOption==="sccc"|| selectedOption==="lessee") {
-        if(selectedOption==="employee"){
+    if (event.target.value==="checkposts" ||event.target.value==="routes" || event.target.value==="duties" || event.target.value==="employee" || event.target.value==="quarry"|| event.target.value==="permitmaster"|| event.target.value==="teams"|| event.target.value==="transportdetails"|| event.target.value==="sccc"|| event.target.value==="lessee") {
+        if(event.target.value==="employee"){
             let email=localStorage.getItem('email')
             const company=response.data.filter((emp)=>emp.emailID===email)
             const info=response.data.filter((vals)=>vals.companyName===company[0].companyName)
-            tableHtml=generateTable_simple(info)
+            tableHtml=generateTable_simple(info,event.target.value)
+            setTableHtml(tableHtml);
         }
         else{
-        tableHtml = generateTable_simple(response.data);
+        tableHtml = generateTable_simple(response.data,event.target.value);
         }
     }
-    else if(selectedOption==="routetrackers"){
+    else if(event.target.value==="routetrackers"){
         tableHtml = generateTable_routetrack(response.data);
     }
-    else if(selectedOption==="eligibility"){
+    else if(event.target.value==="eligibility"){
         tableHtml = generateTable_eligibility(response.data);
     }
-    const newWindow = window.open("", "_blank");
-    newWindow.document.open();
-    newWindow.document.write(tableHtml);
-    newWindow.document.close();
+    setTableHtml(tableHtml);
+    
   } catch (error) {
     console.error(error);
   }
 };
-
-function generateTable_simple(data) {
+  const handleGenerateReport =() => {
+        const newWindow = window.open("", "_blank");
+        newWindow.document.open();
+        newWindow.document.write(tableHtml);
+        newWindow.document.close();
+      }
+const handleDownloadReport = async() => {
+    const blob = new Blob([tableHtml], { type: 'text/html' });
+    const url2 = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url2;
+    link.download = 'report.html';
+    link.click();
+    URL.revokeObjectURL(url2);
+};
+function generateTable_simple(data,selectedOption) {
     let headers=""
     if (selectedOption==="checkposts") {
         headers=["_id", "checkpostID", "name", "town", "division"];
@@ -206,7 +217,7 @@ function generateTable_routetrack(data) {
   return (
     <div className="report-container">
       <h2 className="report-label">Generate Report</h2>
-      <select className="report-select" value={selectedOption} onChange={handleOptionChange}>
+      <select className="report-select" value={selectedOption} onChange={getDetails}>
         <option value="">Select an option</option>
         <option value="checkposts">Checkposts</option>
         <option value="employee">Employee</option>
@@ -222,6 +233,8 @@ function generateTable_routetrack(data) {
         <option value="quarry">Quarry</option>
       </select>
       <button className="report-button" onClick={handleGenerateReport}>Generate Report</button>
+      <button className="report-button" onClick={handleDownloadReport}>Download Report</button>
+    
     </div>
   );
 };
