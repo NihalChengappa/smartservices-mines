@@ -25,17 +25,17 @@
 }
 
 .sidebar-list li:hover {
-  background-color: #1a87a9;
+  background-color: #ed0a52;
   color: white;
 }
 
 .sidebar-list li.active {
-  background-color: #1a87a9;
+  background-color: #ed0a52;
   color: white;
 }
 
 .sidebar-list li.active .sidebar{  
-  background-color: #1a87a9;
+  background-color: #ed0a52;
   color: white;
 }
 .sidebar-link {
@@ -47,11 +47,11 @@
 }
 
 .sidebar-link:hover {
-  background-color: #1a87a9;
+  background-color: #ed0a52;
   color: white;
 }
 
 .sidebar-list li.active .sidebar-link {
-  background-color: #1a87a9;
+  background-color: #ed0a52;
   color: white;
 }

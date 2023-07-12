@@ -5,16 +5,17 @@
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #590381;
-    color: #ffffff
+    color: #ed0a52
   }
 .register-container h2 {
     text-align: center;
-    color: #ffffff;
-    margin-bottom: 20px;
+    color: #ed0a52;
+    margin-bottom: 1px;
+    margin-top: 1px;
   }
   
 .register-container form {
@@ -23,7 +24,7 @@
   }
   
 .register-container label {
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
   
 .register-container input {
@@ -50,7 +51,7 @@
 
 .register-container button {
     padding: 10px;
-    background-color: #333;
+    background-color: #ed0a52;
     color: #ffffff;
     border: none;
     border-radius: 3px;
@@ -58,7 +59,8 @@
   }
 
 .register-container button:hover {
-    background-color: #cca464;
+    background-color:#e71d5d;
+    ;
 }
 
 /* 
@@ -170,3 +172,4 @@ button {
 .line {
     display: inline-block;
 }
+

@@ -6,12 +6,12 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #590381;
-  color: #ffffff
+  color: #ed0a52
 }
 
 .login-container h2 {
   text-align: center;
-  color: #ffffff;
+  color: #ed0a52;
   margin-bottom: 20px;
 }
 
@@ -33,7 +33,7 @@
 
 .login-container button {
   padding: 10px;
-  background-color: #333;
+  background-color: #ed0a52;
   color: #ffffff;
   border: none;
   border-radius: 3px;
@@ -41,8 +41,8 @@
 }
 
 .login-container button:hover {
-  background-color: #CCA464;
-  color: #000
+  background-color: #e71d5d;
+  color: #ffffff
 }
 
 .p1l {
