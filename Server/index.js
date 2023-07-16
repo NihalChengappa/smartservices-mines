@@ -30,6 +30,8 @@ const putELigibilities=require("./routes/put_Eligibility")
 const getCheckpost=require("./routes/get_Checkposts")
 const getDuty=require("./routes/get_duty")
 const getroutetracker=require("./routes/get_RouteTracker")
+const Alerts=require("./routes/alert")
+const getAlerts=require("./routes/get_Alert")
 
 // database connection
 connection();
@@ -66,6 +68,8 @@ app.use("/api/eligibility",putELigibilities)
 app.use("/api/checkposts",getCheckpost)
 app.use("/api/duties",getDuty)
 app.use("/api/routetrackers",getroutetracker)
+app.use("/api/alerts",Alerts)
+app.use("/api/alerts",getAlerts)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));

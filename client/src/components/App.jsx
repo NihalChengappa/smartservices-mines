@@ -21,6 +21,7 @@ import Lessee from '/src/components/Lessee';
 import PermitMaster from './PermitMaster';
 import Reports from './Reports';
 import Sidebar from './Sidebar';
+import Alert from './Alert';
 
 const App = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -37,7 +38,7 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Login setIsAuthenticated={setIsAuthenticated}/>} />
         <Route exact path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
@@ -60,6 +61,7 @@ const App = () => {
                     <Route path="/permitmaster" element={<PermitMaster />} />
                     <Route path="/reports" element={<Reports />} />
                     <Route path="/forms" element={<Sidebar />} />
+                    <Route path="/alerts" element={<Alert />} />
                   </>
                 ) : (
                   <>

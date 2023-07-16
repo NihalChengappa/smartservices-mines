@@ -96,7 +96,6 @@ const Checkposts = () => {
             </tr>
           </tbody>
         </table>
-        {/* <div className="space-line" /> */}
         <button type="submit" className="chk-center-button">Submit</button>
       </form>
       </div>

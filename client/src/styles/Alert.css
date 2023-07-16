@@ -1,0 +1,15 @@
+  .alert-container{
+      border: 1px solid #ccc;
+      padding: 70px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(239, 229, 229, 0.1);
+      background-color: #3d1256;
+      max-width: 400px;
+      margin: 50px auto;  
+  }
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
