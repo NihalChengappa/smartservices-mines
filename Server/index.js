@@ -32,6 +32,7 @@ const getDuty=require("./routes/get_duty")
 const getroutetracker=require("./routes/get_RouteTracker")
 const Alerts=require("./routes/alert")
 const getAlerts=require("./routes/get_Alert")
+const path = require('path')
 
 // database connection
 connection();
@@ -73,3 +74,16 @@ app.use("/api/alerts",getAlerts)
 
 const port = process.env.PORT || 8080;
 app.listen(port,() => console.log(`Listening on port ${port}...`));
+
+const _dirname = path.dirname("");
+const build = path.join(__dirname, "../client/dist");
+
+app.use(express.static(build));
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(build, "index.html"), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
